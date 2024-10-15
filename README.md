@@ -1,6 +1,6 @@
-# FlipMe-OpenSourcePart
+# FlipMe-OpenSourcePart ([Product page](https://mousquetaire-softwares.github.io/FlipMe/))
 
-Flip Me: Concentration game (AppStore iOS) - then open-source part of the code
+Flip Me: Concentration game (AppStore iOS) - then open-source part of the code.
 
 This project contains a truncated version of the original **FlipMe** iOS game available on the App Store. It showcases core concepts and techniques, including MVVM architecture, design principles, and unit testing.
 
