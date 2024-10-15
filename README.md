@@ -4,7 +4,7 @@ Flip Me: Concentration game (AppStore iOS) - then open-source part of the code.
 
 This project contains a truncated version of the original **FlipMe** iOS game available on the App Store. It showcases core concepts and techniques, including MVVM architecture, design principles, and unit testing.
 
-Only a few images from the original game are included, and only two blocks of code have been removed : the scoring algorithm, and the gesture handling for flipping cards (live 3d flipping effect).
+Only a few images from the original game are included, but only two blocks of code have been removed : the scoring algorithm, and the gesture handling for flipping cards (live 3d flipping effect).
 
 ## 🕹️ Game Overview
 
