@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Safebox View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="SafeboxViewController" id="Y6W-OH-hqX" customClass="SafeboxViewController" customModule="Concentration_Storyboard" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="qKg-lO-yhy" userLabel="MainStack">
+                                <rect key="frame" x="16" y="66" width="343" height="696"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="safe-2" translatesAutoresizingMaskIntoConstraints="NO" id="S4t-uu-n6j" userLabel="safeboxImage">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="453.33333333333331"/>
+                                    </imageView>
+                                    <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r4F-Ao-77v" userLabel="FictiveGametable" customClass="GametableView" customModule="Concentration_Storyboard" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="469.33333333333343" width="343" height="226.66666666666669"/>
+                                        <subviews>
+                                            <stackView hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="PDR-Im-Hj0" userLabel="MasterStack">
+                                                <rect key="frame" x="58.333333333333329" y="0.0" width="226.66666666666669" height="226.66666666666666"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="4PO-mQ-WyR" userLabel="VerticalStack1">
+                                                        <rect key="frame" x="0.0" y="0.0" width="226.66666666666666" height="226.66666666666666"/>
+                                                        <subviews>
+                                                            <view opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iur-UV-XPv" userLabel="CardContainer1">
+                                                                <rect key="frame" x="0.0" y="0.0" width="226.66666666666666" height="226.66666666666666"/>
+                                                                <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="Iur-UV-XPv" secondAttribute="height" multiplier="1:1" id="WNW-B5-mUP"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                        <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.0" alpha="0.35505484269999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <gestureRecognizers/>
+                                                    </stackView>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="0.2982719371" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <gestureRecognizers/>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="PDR-Im-Hj0" firstAttribute="width" secondItem="r4F-Ao-77v" secondAttribute="width" priority="751" id="7AL-kg-Fsx"/>
+                                            <constraint firstItem="PDR-Im-Hj0" firstAttribute="centerX" secondItem="r4F-Ao-77v" secondAttribute="centerX" id="H1q-TB-tXf"/>
+                                            <constraint firstItem="PDR-Im-Hj0" firstAttribute="width" relation="lessThanOrEqual" secondItem="r4F-Ao-77v" secondAttribute="width" priority="999" id="KcJ-H4-MKj"/>
+                                            <constraint firstItem="PDR-Im-Hj0" firstAttribute="height" relation="lessThanOrEqual" secondItem="r4F-Ao-77v" secondAttribute="height" priority="999" id="Pq9-mp-Qcb"/>
+                                            <constraint firstItem="PDR-Im-Hj0" firstAttribute="height" secondItem="r4F-Ao-77v" secondAttribute="height" priority="751" id="vhc-K0-bnl"/>
+                                            <constraint firstItem="PDR-Im-Hj0" firstAttribute="centerY" secondItem="r4F-Ao-77v" secondAttribute="centerY" id="zYF-Uf-ki6"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="masterStackView" destination="PDR-Im-Hj0" id="Hwo-cD-ufj"/>
+                                        </connections>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="S4t-uu-n6j" firstAttribute="height" secondItem="Iur-UV-XPv" secondAttribute="height" multiplier="2" id="3Wq-0v-PVz"/>
+                                    <constraint firstItem="S4t-uu-n6j" firstAttribute="width" secondItem="Iur-UV-XPv" secondAttribute="width" multiplier="2" id="x9z-P1-9Ay"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="x9z-P1-9Ay"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact" axis="horizontal">
+                                    <mask key="constraints">
+                                        <include reference="x9z-P1-9Ay"/>
+                                        <exclude reference="3Wq-0v-PVz"/>
+                                    </mask>
+                                </variation>
+                            </stackView>
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N9h-9e-mb1" userLabel="NewUnlockedImageCard Container">
+                                <rect key="frame" x="-152.66666666666666" y="308.66666666666674" width="680.33333333333337" height="680"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lwJ-Zu-AaI" userLabel="CloseButton">
+                                <rect key="frame" x="309" y="66" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="iw1-vE-FJL"/>
+                                    <constraint firstAttribute="width" constant="50" id="jCn-Kw-vu0"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="close-2"/>
+                                <connections>
+                                    <action selector="closeButtonTapAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="VcN-kK-YH5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="lwJ-Zu-AaI" firstAttribute="top" secondItem="qKg-lO-yhy" secondAttribute="top" id="1Mv-fO-W5e"/>
+                            <constraint firstItem="lwJ-Zu-AaI" firstAttribute="left" secondItem="qKg-lO-yhy" secondAttribute="left" id="8EX-XC-M2n"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="leading" secondItem="qKg-lO-yhy" secondAttribute="leading" constant="-16" id="Q3w-Aq-xHe"/>
+                            <constraint firstItem="N9h-9e-mb1" firstAttribute="centerY" secondItem="r4F-Ao-77v" secondAttribute="centerY" id="Qtz-c5-t74"/>
+                            <constraint firstItem="N9h-9e-mb1" firstAttribute="centerX" secondItem="r4F-Ao-77v" secondAttribute="centerX" id="Zmm-ss-feh"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="qKg-lO-yhy" secondAttribute="bottom" constant="16" id="ciJ-HA-89C"/>
+                            <constraint firstItem="N9h-9e-mb1" firstAttribute="width" secondItem="Iur-UV-XPv" secondAttribute="width" multiplier="3" id="dla-IK-9li"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="top" secondItem="qKg-lO-yhy" secondAttribute="top" constant="-16" id="hwb-8L-d8I"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="qKg-lO-yhy" secondAttribute="trailing" constant="16" id="jMn-Pm-QZq"/>
+                            <constraint firstItem="N9h-9e-mb1" firstAttribute="height" secondItem="Iur-UV-XPv" secondAttribute="height" multiplier="3" id="q9E-At-cIG"/>
+                            <constraint firstItem="lwJ-Zu-AaI" firstAttribute="right" secondItem="qKg-lO-yhy" secondAttribute="right" id="y0z-88-JyZ"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="8EX-XC-M2n"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="constraints">
+                                <exclude reference="y0z-88-JyZ"/>
+                                <include reference="8EX-XC-M2n"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="closeButton" destination="lwJ-Zu-AaI" id="4er-SQ-NKZ"/>
+                        <outlet property="fictiveGametable" destination="r4F-Ao-77v" id="SYL-Q8-LQo"/>
+                        <outlet property="newUnlockedImageCardContainer" destination="N9h-9e-mb1" id="KQu-Mw-eZP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-7.2000000000000002" y="-131.52709359605913"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="close-2" width="250.66667175292969" height="250"/>
+        <image name="safe-2" width="216" height="216"/>
+    </resources>
+</document>

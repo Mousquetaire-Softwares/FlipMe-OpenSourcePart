@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CardsDealerViewController" customModule="Concentration_Storyboard" customModuleProvider="target">
+            <connections>
+                <outlet property="squaredView" destination="XUM-61-Nya" id="esA-RK-THt"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="441" height="385"/>
+            <subviews>
+                <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XUM-61-Nya" userLabel="SquaredView">
+                    <rect key="frame" x="28" y="0.0" width="385" height="385"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="XUM-61-Nya" secondAttribute="height" multiplier="1:1" id="ef4-Et-gM2"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <accessibility key="accessibilityConfiguration">
+                <accessibilityTraits key="traits" notEnabled="YES"/>
+            </accessibility>
+            <constraints>
+                <constraint firstItem="XUM-61-Nya" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerXWithinMargins" id="B5d-Zk-iaI"/>
+                <constraint firstItem="XUM-61-Nya" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" priority="750" id="GW3-9c-hLr"/>
+                <constraint firstItem="XUM-61-Nya" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerYWithinMargins" id="GoG-xW-YYf"/>
+                <constraint firstItem="XUM-61-Nya" firstAttribute="height" relation="lessThanOrEqual" secondItem="i5M-Pr-FkT" secondAttribute="height" id="HIs-yq-f3Y"/>
+                <constraint firstItem="XUM-61-Nya" firstAttribute="width" relation="lessThanOrEqual" secondItem="i5M-Pr-FkT" secondAttribute="width" id="Ka0-TT-g1X"/>
+                <constraint firstItem="XUM-61-Nya" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" priority="750" id="TUu-M7-UjH"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-51.145038167938928" y="-196.12676056338029"/>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Helper For Swiping View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="HelperForSwipingViewController" customModule="Concentration_Storyboard" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="350" height="500"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gd3-Y4-LZx" userLabel="CardView Container View">
+                                <rect key="frame" x="105" y="192.66666666666663" width="140" height="140"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="gd3-Y4-LZx" secondAttribute="height" id="P6C-Eh-6wL"/>
+                                </constraints>
+                            </containerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Phu-9w-Cq2" userLabel="handView">
+                                <rect key="frame" x="105" y="230.33333333333337" width="140" height="75"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hand-1" translatesAutoresizingMaskIntoConstraints="NO" id="0ml-TG-tjA" userLabel="HandImage">
+                                        <rect key="frame" x="7" y="31.999999999999972" width="126" height="126"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="0ml-TG-tjA" secondAttribute="height" multiplier="1:1" id="Ipq-OB-lUn"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="0ml-TG-tjA" firstAttribute="centerX" secondItem="Phu-9w-Cq2" secondAttribute="centerX" id="EGN-kv-8Qi"/>
+                                    <constraint firstItem="0ml-TG-tjA" firstAttribute="width" secondItem="Phu-9w-Cq2" secondAttribute="width" multiplier="0.9" id="V99-Zq-zbr"/>
+                                    <constraint firstItem="0ml-TG-tjA" firstAttribute="top" secondItem="Phu-9w-Cq2" secondAttribute="top" constant="32" id="hbE-WS-1SJ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Phu-9w-Cq2" firstAttribute="width" secondItem="gd3-Y4-LZx" secondAttribute="width" id="0u5-Vp-nGD"/>
+                            <constraint firstItem="gd3-Y4-LZx" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="5GI-ta-ojF"/>
+                            <constraint firstItem="Phu-9w-Cq2" firstAttribute="centerX" secondItem="gd3-Y4-LZx" secondAttribute="centerX" id="A3c-ia-Vmt"/>
+                            <constraint firstItem="Phu-9w-Cq2" firstAttribute="height" secondItem="gd3-Y4-LZx" secondAttribute="height" constant="-65" id="Ttv-5r-Qe7"/>
+                            <constraint firstItem="gd3-Y4-LZx" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" id="V5c-RR-qA4"/>
+                            <constraint firstItem="Phu-9w-Cq2" firstAttribute="top" secondItem="gd3-Y4-LZx" secondAttribute="centerY" constant="-32.333333333333314" id="hty-JB-bFN"/>
+                            <constraint firstItem="gd3-Y4-LZx" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" multiplier="0.4" id="mP1-I4-ds7"/>
+                        </constraints>
+                    </view>
+                    <size key="freeformSize" width="350" height="500"/>
+                    <connections>
+                        <outlet property="cardViewContainerView" destination="gd3-Y4-LZx" id="Di2-iD-VfB"/>
+                        <outlet property="handImage" destination="0ml-TG-tjA" id="yFC-2t-U0s"/>
+                        <outlet property="viewHand" destination="Phu-9w-Cq2" id="4yn-4X-2D7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="148.09160305343511" y="-100"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="hand-1" width="335" height="335"/>
+    </resources>
+</document>

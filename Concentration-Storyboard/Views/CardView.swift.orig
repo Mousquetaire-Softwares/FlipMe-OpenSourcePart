@@ -1,0 +1,541 @@
+//
+//  CardView.swift
+//  Concentration-Storyboard
+//
+//  Created by Steven Morin on 07/07/2023.
+//
+
+import UIKit
+
+protocol CardViewDelegate {
+    func faceUp(cardViewModelIndex:CardIndex) throws
+    func putTwoUnmatchedCardsFaceDown()
+    var cardSize:CGFloat { get }
+}
+
+@IBDesignable
+public class CardView: UIView {
+    private static let RASTERIZE = false
+    
+    class MovingContentView : UIView {
+        lazy var contentView:ContentView = {
+            let view = ContentView()
+            view.translatesAutoresizingMaskIntoConstraints = false
+//            view.contentMode = .redraw
+            view.backgroundColor = backgroundColor
+            insertSubview(view, at: 0)
+            NSLayoutConstraint.activate([
+                view.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+                view.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+                view.widthAnchor.constraint(equalTo: self.widthAnchor),
+                view.heightAnchor.constraint(equalTo: self.heightAnchor)]
+            )
+            return view
+        }()
+        
+        class ContentView : UIView {
+            
+            @IBOutlet lazy var coverImage: UIImageView! = {
+                let image = UIImageView(frame: .zero)
+                image.image = UIImage(named: "testimage")
+                insertSubview(image, at: 0)
+                configure(imageView: image)
+                return image
+            }()
+            
+            @IBOutlet lazy var cardImage: UIImageView! = {
+                let image = UIImageView(frame: .zero)
+                image.isHidden = true
+                insertSubview(image, at: 1)
+                configure(imageView: image)
+                image.layer.shouldRasterize = CardView.RASTERIZE
+                image.layer.transform = CATransform3DMakeRotation(CGFloat.pi, 0, 1, 0)
+                return image
+            }()
+            
+            private func configure(imageView image:UIImageView) {
+                image.contentMode = .scaleAspectFit
+                image.translatesAutoresizingMaskIntoConstraints = false
+                image.layer.shouldRasterize = true
+                NSLayoutConstraint.activate([
+                    image.centerYAnchor.constraint(equalTo: centerYAnchor),
+                    image.centerXAnchor.constraint(equalTo: centerXAnchor),
+                    image.widthAnchor.constraint(equalTo: widthAnchor, multiplier: Sizes.ImageToViewSize),
+                    image.heightAnchor.constraint(equalTo: heightAnchor, multiplier: Sizes.ImageToViewSize)
+                ])
+            }
+            
+            // Only override draw() if you perform custom drawing.
+            // An empty implementation adversely affects performance during animation.
+            public override func draw(_ rect: CGRect) {
+                // Drawing code
+                if cardImage.isHidden == false || coverImage.isHidden == false {
+                    let roundedRect = UIBezierPath(roundedRect: bounds.zoom(by: Sizes.ContentSizeToViewSize), cornerRadius: bounds.width * Sizes.RoundedCornerRadiusToViewSize)
+                    let backColor:UIColor
+                    
+                    
+                    if cardImage.isHidden == false {
+                        backColor = Colors.faceUpBackground
+                    } else {
+                        backColor = Colors.faceDownBackground
+                    }
+                    
+                    backColor.setFill()
+                    roundedRect.fill()
+                    roundedRect.addClip()
+                }
+            }
+        }
+    }
+    static let identifier = "CardView"
+    var delegate:CardViewDelegate?
+    
+    lazy var animatableContentViewSizeConstraints:[NSLayoutConstraint] =
+    [NSLayoutConstraint(item: movingContentView, attribute: .width, relatedBy: .equal, toItem: self, attribute: .width, multiplier: 1, constant: 0)
+     ,NSLayoutConstraint(item: movingContentView, attribute: .height, relatedBy: .equal, toItem: self, attribute: .height, multiplier: 1, constant: 0)]
+    
+    lazy var movingContentView:MovingContentView = {
+        let view = MovingContentView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.contentMode = .redraw
+        view.backgroundColor = backgroundColor
+        insertSubview(view, at: 0)
+        NSLayoutConstraint.activate([
+            view.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            view.centerXAnchor.constraint(equalTo: self.centerXAnchor)])
+        
+        return view
+    }()
+
+    override public func setNeedsLayout() {
+        super.setNeedsLayout()
+
+    }
+    
+    public required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        commonInit()
+    }
+    
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        commonInit()
+    }
+    
+    private func commonInit() {
+        backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)
+        translatesAutoresizingMaskIntoConstraints = false
+        contentMode = .redraw
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panCardView(recognizer:)))
+        panGesture.maximumNumberOfTouches = 1
+        addGestureRecognizer(panGesture)
+        movingContentView.layer.shadowColor = UIColor.black.cgColor
+        movingContentView.layer.shadowOpacity = 0.5
+        movingContentView.layer.shadowOffset = CGSize(width: 2, height: 2)
+        movingContentView.layer.shadowRadius = 5
+//        animatableContentView.layer.masksToBounds = false
+
+        NSLayoutConstraint.activate(animatableContentViewSizeConstraints)
+        
+        updateView()
+
+//        backgroundColor = .red
+//        updateView()
+//        setNeedsDisplay()
+    }
+    
+    var cardViewModel:CardViewModel?
+    
+    @IBInspectable
+    public var isTransparent:Bool = false {
+        didSet { updateView() }
+    }
+    @IBInspectable
+    public var isAssociatedToCardModel:Bool = false {
+        didSet { updateView() }
+    }
+    
+    @IBInspectable
+    public var isFaceUp:Bool = false {
+        didSet {
+            if oldValue == true && isFaceUp == false {
+                
+                let orientation:(x:CGFloat,y:CGFloat) = [(1,0),(0,1),(1,1)].randomElement()!
+                let transformCardViewBeginning = CATransform3DConcat(movingContentView.contentView.layer.transform, CATransform3DMakeRotation(CGFloat.pi/2 , orientation.x , orientation.y , 0))
+                let transformCardViewEnding = CATransform3DConcat(movingContentView.contentView.layer.transform, CATransform3DMakeRotation(CGFloat.pi , orientation.x , orientation.y , 0))
+                
+                self.movingContentView.contentView.layer.shouldRasterize = CardView.RASTERIZE
+                UIView.transition(with: movingContentView
+                                  , duration: 0.5
+                                  , animations: {
+                    self.movingContentView.contentView.layer.transform = transformCardViewBeginning
+                }
+                                  , completion: { finished in
+                    UIView.transition(with: self.movingContentView
+                                      , duration: 0.5
+                                      , animations: {
+                        self.movingContentView.contentView.layer.transform = transformCardViewEnding
+                        self.updateView()
+                    }
+                    )
+                }
+                )
+            } else {
+                updateView()
+            }
+        }
+    }
+    
+    @IBInspectable
+    public var isMoving:Bool = false {
+        didSet { updateView() }
+    }
+    
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        // todo : show image ?
+    }
+    
+    private func updateView() {
+//        debugPrint("\(self.frame.width) \(self.frame.height)")
+        if !isMoving {
+            movingContentView.layer.shadowColor = UIColor.black.cgColor
+            movingContentView.layer.shadowOpacity = 0.4
+            movingContentView.layer.shadowOffset = CGSize(width: 2, height: 2)
+            movingContentView.layer.shadowRadius = 5
+        } else {
+            movingContentView.layer.shadowColor = UIColor.black.cgColor
+            movingContentView.layer.shadowOpacity = 0.8
+            movingContentView.layer.shadowOffset = CGSize(width: 4, height: 4)
+            movingContentView.layer.shadowRadius = 10
+        }
+        
+        if isAssociatedToCardModel && !isTransparent {
+            if isFaceUp {
+                movingContentView.contentView.cardImage.isHidden = false
+                movingContentView.contentView.coverImage.isHidden = true
+            } else {
+                movingContentView.contentView.cardImage.isHidden = true
+                movingContentView.contentView.coverImage.isHidden = false
+            }
+
+//            backgroundColor = isFaceUp ? Colors.faceUpBackground : Colors.faceDownBackground
+
+        } else {
+            movingContentView.contentView.cardImage.isHidden = true
+            movingContentView.contentView.coverImage.isHidden = true
+//            backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)
+        }
+        setNeedsDisplay()
+//        animatableContentView.setNeedsDisplay()
+        movingContentView.contentView.setNeedsDisplay()
+    }
+    
+
+
+    
+//    private var cardContentViewLayerTransform:CATransform3D = CATransform3DIdentity
+ 
+    private var contentIsZoomed = false
+    private func setupZoomedSize() {
+        animatableContentViewSizeConstraints.forEach{ $0.constant = zoomedCardSize - cardSize }
+
+    }
+
+    private func restoreRealSize() {
+//        animatableContentViewSizeConstraints.forEach{ $0.constant = 0 }
+////        let rotationZ = atan2(movingContentView.layer.transform.m12, movingContentView.layer.transform.m11)
+////        movingContentView.layer.transform = CATransform3DMakeRotation(rotationZ , 0, 0, 1)
+    }
+ 
+    private var panCardViewFrame : CGRect?
+    private var panCardViewIsFaceUp : Bool?
+    private var panCardViewLayerTransformWhileMoving : CATransform3D?
+    private var panCardViewLayerTransformBeforeMoving : CATransform3D?
+    private var panCardViewLastTranslation : CGPoint = CGPoint.zero
+    private var panCardViewLastSwipeFactor : CGFloat = 0
+    private var panCardViewTotalDistance : CGFloat = 0
+    @objc private func panCardView(recognizer: UIPanGestureRecognizer) {
+        guard let cardViewModel = cardViewModel //firstIndex(of: cardView)
+        else { return }
+        if recognizer.state == .began {
+            if self.isMoving {
+                recognizer.state = .cancelled
+                return
+            } else {
+                if !self.isFaceUp {
+                    delegate?.putTwoUnmatchedCardsFaceDown()
+                }
+                panCardViewFrame = recognizer.view?.frame
+                panCardViewIsFaceUp = self.isFaceUp
+                panCardViewLayerTransformBeforeMoving = movingContentView.layer.transform
+                panCardViewLastTranslation = CGPoint.zero
+                panCardViewTotalDistance = 0
+                panCardViewLastSwipeFactor = 0
+                self.isMoving = true
+                
+                if !contentIsZoomed {
+                    setupZoomedSize()
+                    contentIsZoomed = true
+                    let realCardSizeToZoomedCardSize = CGFloat(1)/zoomedCardSizeToRealCardSize
+                    movingContentView.layer.transform = CATransform3DScale(movingContentView.layer.transform, realCardSizeToZoomedCardSize, realCardSizeToZoomedCardSize, realCardSizeToZoomedCardSize)
+                }
+                
+                panCardViewLayerTransformWhileMoving = movingContentView.layer.transform
+                panCardViewLayerTransformBeforeMoving = panCardViewLayerTransformWhileMoving
+
+                superview?.superview?.bringSubviewToFront(superview!)
+                superview?.bringSubviewToFront(self)
+            }
+        }
+        if let panCardViewFrame = panCardViewFrame
+            , let panCardViewIsFaceUp = panCardViewIsFaceUp
+            , let panCardViewLayerTransformBeforeMoving = panCardViewLayerTransformBeforeMoving
+            , let panCardViewLayerTransformWhileMoving = panCardViewLayerTransformWhileMoving {
+            
+            let translation = recognizer.translation(in: self.superview!)
+            let thisTranslationStep = max((translation.x-panCardViewLastTranslation.x).abs , (translation.y-panCardViewLastTranslation.y).abs)
+            panCardViewTotalDistance += thisTranslationStep
+            
+            
+            struct Vector3d { var x,y,z : CGFloat}
+            var swipeFactor: CGFloat = panCardViewTotalDistance / 200
+            var swipeVector = Vector3d(x: CGFloat.nan , y: CGFloat.nan , z: CGFloat.nan )
+            var rotationFactor : CGFloat = (translation.x*translation.y.abs)/(200*200)
+            let translationDistance : CGFloat = max((translation.x).abs , (translation.y).abs)
+            
+            func angle(fromFactor:CGFloat) -> CGFloat {
+                return fromFactor * CGFloat.pi
+            }
+            func transformTranslation(by:CGPoint) -> CATransform3D {
+                CATransform3DMakeTranslation(translation.x/2, translation.y/2,0)
+            }
+            func transformSwipe(fromFactor:CGFloat, fromVector:Vector3d) -> CATransform3D {
+                CATransform3DMakeRotation(angle(fromFactor:fromFactor)
+                                          , fromVector.x
+                                          , fromVector.y
+                                          , fromVector.z)
+            }
+            func transformZoom(fromSwipeFactor:CGFloat) -> CATransform3D {
+                let maxZoomFactor = zoomedCardSizeToRealCardSize
+                let scaleFactor = min(maxZoomFactor, (maxZoomFactor-1)*fromSwipeFactor+1)
+//                let realCardSizeToZoomedCardSize = 1/zoomedCardSizeToRealCardSize
+//                let scaleFactor = min(1, (1-realCardSizeToZoomedCardSize)*fromSwipeFactor + (realCardSizeToZoomedCardSize))
+                return CATransform3DMakeScale(scaleFactor, scaleFactor, scaleFactor)
+            }
+            func transformRotate(fromFactor:CGFloat) -> CATransform3D {
+                CATransform3DMakeRotation(angle(fromFactor:fromFactor) , 0, 0, 1)
+            }
+            let transformPutOnTop = CATransform3DMakeTranslation(0, 0, 1000)
+            
+            swipeVector.x = -translation.y / max(translation.x.abs,translation.y.abs)
+            swipeVector.y = translation.x / max(translation.x.abs,translation.y.abs)
+            swipeVector.z = 0
+            
+            if panCardViewIsFaceUp {
+                
+                let smoothFactor = min(panCardViewTotalDistance / pow(200,0.75), 1)
+                rotationFactor = smoothFactor * ( atan2(translation.y, translation.x)+(.pi/2) ) / .pi
+                
+                switch recognizer.state {
+                case .failed, .cancelled, .ended:
+                    rotationFactor = roundToClosestHalf(factor:rotationFactor)
+                    
+                    var transformCardViewWhileMoving = panCardViewLayerTransformWhileMoving
+                    transformCardViewWhileMoving = CATransform3DConcat(transformCardViewWhileMoving, transformZoom(fromSwipeFactor: 0))
+                    transformCardViewWhileMoving = CATransform3DConcat(transformCardViewWhileMoving, transformRotate(fromFactor: rotationFactor))
+                    
+                    var transformCardViewAfterMoving = panCardViewLayerTransformBeforeMoving
+                    transformCardViewAfterMoving = CATransform3DConcat(transformCardViewAfterMoving, transformRotate(fromFactor: rotationFactor))
+                    transformCardViewAfterMoving = transformCardViewWhileMoving
+                    
+                    self.movingContentView.layer.shouldRasterize = false
+                    UIView.transition(with: self
+                                      , duration: 1
+                                      , animations: {
+                        self.isMoving = false
+                        self.frame = panCardViewFrame
+                        
+                        self.movingContentView.layer.transform = transformCardViewWhileMoving
+                        self.movingContentView.layer.zPosition = 0
+                        self.setNeedsLayout()
+                    }
+                                      , completion: { finished in
+                        self.restoreRealSize()
+                        self.movingContentView.layer.transform = transformCardViewAfterMoving
+                        self.movingContentView.layer.shouldRasterize = Self.RASTERIZE
+                    })
+                default:
+                    var transformCardViewWhileMoving = panCardViewLayerTransformWhileMoving
+                    transformCardViewWhileMoving = CATransform3DConcat(transformCardViewWhileMoving, transformZoom(fromSwipeFactor: swipeFactor))
+                    transformCardViewWhileMoving = CATransform3DConcat(transformCardViewWhileMoving, transformRotate(fromFactor: rotationFactor))
+                    transformCardViewWhileMoving = CATransform3DConcat(transformCardViewWhileMoving, transformTranslation(by:translation))
+                    
+                    self.movingContentView.layer.shouldRasterize = Self.RASTERIZE
+                    self.movingContentView.layer.transform = transformCardViewWhileMoving
+                }
+                
+            } else {
+                
+                switch recognizer.state {
+                case .failed, .cancelled, .ended:
+                    
+                    if self.isFaceUp == panCardViewIsFaceUp {
+                        swipeFactor = 0
+                    } else {
+                        swipeFactor = 1
+                    }
+                    
+                    let translationRatio = CGPoint(x: -translation.y / panCardViewTotalDistance
+                                                   , y: translation.x / panCardViewTotalDistance)
+                    swipeVector.x = translationRatio.y.abs > 2*translationRatio.x.abs ? 0 : (translationRatio.x.sign == .plus ? 1 : -1)
+                    swipeVector.y = translationRatio.x.abs > 2*translationRatio.y.abs ? 0 : (translationRatio.y.sign == .plus ? 1 : -1)
+                    
+                    
+                    var transformCardViewAfterMoving = panCardViewLayerTransformBeforeMoving
+//                    transformCardViewAfterMoving = CATransform3DConcat(transformCardViewAfterMoving, transformZoom(fromSwipeFactor: 0))
+                    transformCardViewAfterMoving = CATransform3DConcat(transformCardViewAfterMoving, transformSwipe(fromFactor: swipeFactor, fromVector: swipeVector))
+                    
+                    var transformCardViewWhileMoving = panCardViewLayerTransformWhileMoving
+                    transformCardViewWhileMoving = CATransform3DConcat(transformCardViewWhileMoving, transformZoom(fromSwipeFactor: 0))
+                    transformCardViewWhileMoving = CATransform3DConcat(transformCardViewWhileMoving, transformSwipe(fromFactor: swipeFactor, fromVector: swipeVector))
+                    transformCardViewWhileMoving = CATransform3DConcat(transformCardViewWhileMoving, transformPutOnTop)
+                    
+                    self.movingContentView.layer.shouldRasterize = false
+                    UIView.transition(with: self
+                                      , duration: 1
+                                      , animations: {
+                        self.isMoving = false
+                        self.frame = panCardViewFrame
+                        
+                        self.movingContentView.layer.transform = transformCardViewWhileMoving
+                        self.movingContentView.layer.zPosition = 0
+                        self.setNeedsLayout()
+                    }
+                                      , completion: { finished in
+                        self.movingContentView.layer.shouldRasterize = Self.RASTERIZE
+                        self.movingContentView.layer.transform = transformCardViewAfterMoving
+                        self.restoreRealSize()
+                    })
+                default:
+                    if swipeFactor > 1 { swipeFactor = 1 }
+                    
+                    if self.isFaceUp == panCardViewIsFaceUp {
+                        panCardViewTotalDistance = translationDistance
+                        
+                        if swipeFactor > 0.5 {
+                            if (try? delegate?.faceUp(cardViewModelIndex: cardViewModel.index)) == nil {
+                                recognizer.state = .cancelled
+                                return
+                            }
+                        }
+                        else {
+                            swipeFactor = panCardViewTotalDistance / 200
+                        }
+                    }
+                    
+                    var transformCardView:CATransform3D = CATransform3DIdentity
+                    transformCardView = CATransform3DConcat(transformCardView, transformZoom(fromSwipeFactor: swipeFactor))
+                    // this avoid some glitch on the first frame when grabbing a faced down card
+                    if swipeFactor > 0.01 {
+                        transformCardView = CATransform3DConcat(transformCardView, transformSwipe(fromFactor: swipeFactor, fromVector: swipeVector))
+                    }
+                    transformCardView = CATransform3DConcat(transformCardView, transformTranslation(by: translation))
+                    transformCardView = CATransform3DConcat(transformCardView, transformPutOnTop)
+                    
+                    self.movingContentView.layer.shouldRasterize = Self.RASTERIZE
+//                    self.movingContentView.layer.zPosition = 0
+                    UIView.transition(with: self
+                                      , duration: 0.5
+                                      , animations: {
+                        self.movingContentView.layer.transform = CATransform3DConcat(panCardViewLayerTransformWhileMoving, transformCardView)
+                    })
+                }
+            }
+            panCardViewLastTranslation = translation
+            panCardViewLastSwipeFactor = swipeFactor
+        }
+    }
+
+    lazy var idLabel : UILabel = createCardLabel()
+    
+    func createCardLabel() -> UILabel {
+        let label = UILabel()
+        label.attributedText = labelAttributedString
+        return label
+//        label.attributedText = labelAttributedString
+    }
+    
+    var labelAttributedString : NSAttributedString {
+
+        
+        var attFont = UIFont.preferredFont(forTextStyle: .title1).withSize(cardLabelFontSize)
+        attFont = UIFontMetrics(forTextStyle: .title1).scaledFont(for: attFont)
+        
+        let attParagraph = NSMutableParagraphStyle()
+        attParagraph.alignment = .center
+
+        
+        let labelAttributes: [NSAttributedString.Key:Any] =
+        [   .paragraphStyle:attParagraph,
+            .font:attFont
+        ]
+        
+        return NSAttributedString(string: "?", attributes: labelAttributes)
+    }
+
+    
+}
+
+
+extension CardView {
+    struct Sizes {
+        static let CardLabelFontSize : CGFloat = 1.00
+        static let ContentSizeToViewSize : CGFloat = 0.85
+        static let ImageToViewSize : CGFloat = 0.8
+        static let RoundedCornerRadiusToViewSize : CGFloat = 0.08
+<<<<<<< HEAD
+        static let ReferenceCardZoomSizeToScreenSize : CGFloat = UIDevice.current.userInterfaceIdiom == .pad ? 0.4 : 0.75
+=======
+        static let ReferenceCardZoomSizeToScreenSize : CGFloat = { UIDevice.current.userInterfaceIdiom == .pad ? 0.35 : 0.7 }()
+>>>>>>> ft-best-images-sizes-test1
+    }
+    private struct Colors {
+        static let faceDownBackground = #colorLiteral(red: 0.4230141489, green: 0.5621921234, blue: 1, alpha: 1)
+        static let faceUpBackground = #colorLiteral(red: 1, green: 0.903345339, blue: 0.5298934725, alpha: 1)
+    }
+    var cardSize : CGFloat {
+        delegate?.cardSize ?? bounds.width
+    }
+<<<<<<< HEAD
+    var maxZoomedCardSize : CGFloat {
+        let referenceSize = min(UIScreen.main.bounds.width, UIScreen.main.bounds.height) * Sizes.ReferenceCardZoomSizeToScreenSize
+        return cardSize + ((referenceSize - cardSize)/2)
+=======
+    var zoomedCardSize : CGFloat {
+        let referenceSize = min(UIScreen.main.bounds.width,UIScreen.main.bounds.height) * Sizes.ReferenceCardZoomSizeToScreenSize
+//        return cardSize + ((referenceSize - cardSize)/2)
+        return referenceSize
+>>>>>>> ft-best-images-sizes-test1
+    }
+    var zoomedCardSizeToRealCardSize : CGFloat {
+//        return 3
+        guard delegate != nil else { return 1 }
+        return zoomedCardSize / delegate!.cardSize
+    }
+    
+    var cardLabelFontSize : CGFloat {
+        Sizes.CardLabelFontSize
+    }
+    
+//    func contentViewZoomFactor(fromCardZoomFactor:CGFloat) {
+//        
+//    }
+    
+//    var cardBackgroundColor : UIColor {
+//        Colors.cardBackground
+//    }
+//    var cardForegroundColo
+}
+

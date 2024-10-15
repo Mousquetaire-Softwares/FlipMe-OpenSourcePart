@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "C752374A-6474-4603-BAF5-1D712E38B8B8",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:Concentration-Storyboard.xcodeproj",
+        "identifier" : "B00E11362A2F1E7E000EE804",
+        "name" : "Concentration-StoryboardTests"
+      }
+    }
+  ],
+  "version" : 1
+}

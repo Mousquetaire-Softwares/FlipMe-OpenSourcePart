@@ -1,0 +1,1623 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B00029322B963CDC00754519 /* RoundedShadowedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00029312B963CDC00754519 /* RoundedShadowedView.swift */; };
+		B00182222A4F0E060080CBD0 /* GameModeChooserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00182212A4F0E060080CBD0 /* GameModeChooserViewController.swift */; };
+		B00182252A51B4430080CBD0 /* LevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00182242A51B4430080CBD0 /* LevelViewController.swift */; };
+		B00E11252A2F1E7D000EE804 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00E11242A2F1E7D000EE804 /* AppDelegate.swift */; };
+		B00E11272A2F1E7D000EE804 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00E11262A2F1E7D000EE804 /* SceneDelegate.swift */; };
+		B00E112C2A2F1E7D000EE804 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B00E112A2A2F1E7D000EE804 /* Main.storyboard */; };
+		B00E112E2A2F1E7E000EE804 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B00E112D2A2F1E7E000EE804 /* Assets.xcassets */; };
+		B00E11312A2F1E7E000EE804 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B00E112F2A2F1E7E000EE804 /* LaunchScreen.storyboard */; };
+		B00E113C2A2F1E7E000EE804 /* Concentration_StoryboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00E113B2A2F1E7E000EE804 /* Concentration_StoryboardTests.swift */; };
+		B00E11462A2F1E7E000EE804 /* Concentration_StoryboardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00E11452A2F1E7E000EE804 /* Concentration_StoryboardUITests.swift */; };
+		B00E11482A2F1E7E000EE804 /* Concentration_StoryboardUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00E11472A2F1E7E000EE804 /* Concentration_StoryboardUITestsLaunchTests.swift */; };
+		B00E1A112AC1D73F002389FF /* PlayableCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00E1A102AC1D73E002389FF /* PlayableCardViewController.swift */; };
+		B03A42EA2BBD904A005B6BDB /* Backgrounds.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B03A42E92BBD904A005B6BDB /* Backgrounds.xcassets */; };
+		B03A42EC2BBD9947005B6BDB /* BackgroundsLibraryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03A42EB2BBD9947005B6BDB /* BackgroundsLibraryModel.swift */; };
+		B03A42EE2BBDABFF005B6BDB /* BackgroundsLibraryModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03A42ED2BBDABFF005B6BDB /* BackgroundsLibraryModelTests.swift */; };
+		B03A42F32BC49BDE005B6BDB /* HelpAndCreditsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B03A42F22BC49BDE005B6BDB /* HelpAndCreditsViewController.xib */; };
+		B03A42F42BC49BDE005B6BDB /* HelpAndCreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03A42F12BC49BDE005B6BDB /* HelpAndCreditsViewController.swift */; };
+		B03BE9C72B6DA1B70069842F /* ProgressionBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B03BE9C52B6DA1B70069842F /* ProgressionBarView.xib */; };
+		B03BE9CD2B716FD30069842F /* VfxMovingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03BE9CC2B716FD30069842F /* VfxMovingViewController.swift */; };
+		B03BE9CF2B7170C00069842F /* VfxParticlesExplosionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03BE9CE2B7170C00069842F /* VfxParticlesExplosionViewController.swift */; };
+		B03BE9D12B7174080069842F /* VfxBouncingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03BE9D02B7174080069842F /* VfxBouncingViewController.swift */; };
+		B03BE9D32B7249530069842F /* SingleImageDeckModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03BE9D22B7249530069842F /* SingleImageDeckModel.swift */; };
+		B03BE9D52B724ACD0069842F /* LevelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03BE9D42B724ACD0069842F /* LevelModel.swift */; };
+		B03BE9D72B73A8810069842F /* ImagesLibraryPickerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03BE9D62B73A8810069842F /* ImagesLibraryPickerModel.swift */; };
+		B03BE9D92B73ACC50069842F /* ImagesLibraryPickerModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03BE9D82B73ACC50069842F /* ImagesLibraryPickerModelTests.swift */; };
+		B03BE9DB2B73AD3A0069842F /* MockImagesLibraryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03BE9DA2B73AD3A0069842F /* MockImagesLibraryModel.swift */; };
+		B03BE9DD2B7514BA0069842F /* LevelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03BE9DC2B7514BA0069842F /* LevelViewModel.swift */; };
+		B03BE9DF2B751B190069842F /* MockLevelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03BE9DE2B751B190069842F /* MockLevelViewModel.swift */; };
+		B03BE9E12B751DEB0069842F /* LevelViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03BE9E02B751DEB0069842F /* LevelViewModelTests.swift */; };
+		B03BE9E32B7532FE0069842F /* MockDealerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03BE9E22B7532FE0069842F /* MockDealerViewModel.swift */; };
+		B03BE9E52B7533710069842F /* MockPlayingEngineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03BE9E42B7533710069842F /* MockPlayingEngineViewModel.swift */; };
+		B03BE9E72B7571C50069842F /* MockImagesLibraryPickerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03BE9E62B7571C50069842F /* MockImagesLibraryPickerModel.swift */; };
+		B03BE9E92B76395D0069842F /* LevelsLibraryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03BE9E82B76395D0069842F /* LevelsLibraryModel.swift */; };
+		B03BE9EB2B768B6E0069842F /* LevelsLibraryModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03BE9EA2B768B6E0069842F /* LevelsLibraryModelTests.swift */; };
+		B03BE9ED2B76904B0069842F /* StageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03BE9EC2B76904B0069842F /* StageModel.swift */; };
+		B03BE9EF2B76B2280069842F /* GameProcessViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03BE9EE2B76B2280069842F /* GameProcessViewModel.swift */; };
+		B03BE9F12B76B46D0069842F /* LevelsLibraryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03BE9F02B76B46D0069842F /* LevelsLibraryViewModel.swift */; };
+		B03BE9F52B77AD770069842F /* DoubleImageDeckModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03BE9F42B77AD770069842F /* DoubleImageDeckModel.swift */; };
+		B04468502B6D1D2D0091A151 /* ScoreRankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B044684E2B6D1D2D0091A151 /* ScoreRankViewController.swift */; };
+		B04468512B6D1D2D0091A151 /* ScoreRankView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B044684F2B6D1D2D0091A151 /* ScoreRankView.xib */; };
+		B045559E2B6B0C5900F31F6B /* EndOfGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B045559C2B6B0C5900F31F6B /* EndOfGameViewController.swift */; };
+		B04720412B3F6D0A004B9BE5 /* AddingCardsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04720402B3F6D0A004B9BE5 /* AddingCardsViewControllerTests.swift */; };
+		B04D095B2C125B1F002AB763 /* ReviewRequesterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04D095A2C125B1F002AB763 /* ReviewRequesterModel.swift */; };
+		B053A79A2B598992006AC379 /* SinglePlayingViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B053A7992B598992006AC379 /* SinglePlayingViewModelTests.swift */; };
+		B053A79C2B598AF8006AC379 /* MockDeckModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B053A79B2B598AF8006AC379 /* MockDeckModel.swift */; };
+		B053A79E2B598C65006AC379 /* MockPlayingEngineViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B053A79D2B598C65006AC379 /* MockPlayingEngineViewModelDelegate.swift */; };
+		B053A7A02B598DC3006AC379 /* MockScoreEngineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B053A79F2B598DC3006AC379 /* MockScoreEngineViewModel.swift */; };
+		B053A7A22B599184006AC379 /* MockGametableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B053A7A12B599184006AC379 /* MockGametableViewModel.swift */; };
+		B05CEF8F2BEEAA6100ABA6F7 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06DF66B2B48C26900B88E7D /* CardViewModel.swift */; };
+		B05CEF902BEEAA6100ABA6F7 /* ScoreRankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06864782BE143B6009A88BE /* ScoreRankView.swift */; };
+		B05CEF912BEEAA6100ABA6F7 /* FoundationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EB121C2ACD6F2F00F2C055 /* FoundationExtensions.swift */; };
+		B05CEF922BEEAA6100ABA6F7 /* MultiPlayingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E22C192B54A9B600B53F1B /* MultiPlayingViewModel.swift */; };
+		B05CEF932BEEAA6100ABA6F7 /* GametableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B5E0642A52D4A700E9D884 /* GametableView.swift */; };
+		B05CEF942BEEAA6100ABA6F7 /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05FDD2A2B18F13900E57C8B /* UIKitExtensions.swift */; };
+		B05CEF952BEEAA6100ABA6F7 /* SingleImageDeckModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03BE9D22B7249530069842F /* SingleImageDeckModel.swift */; };
+		B05CEF962BEEAA6100ABA6F7 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C557E82B0B5DE5003E33D1 /* main.swift */; };
+		B05CEF972BEEAA6100ABA6F7 /* ImagesLibraryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E22C112B54A2A800B53F1B /* ImagesLibraryModel.swift */; };
+		B05CEF982BEEAA6100ABA6F7 /* OptionalExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EB121A2ACAE42A00F2C055 /* OptionalExtensions.swift */; };
+		B05CEF992BEEAA6100ABA6F7 /* StageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E868642B8CA2FC0003DADB /* StageViewModel.swift */; };
+		B05CEF9A2BEEAA6100ABA6F7 /* GameModeChooserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00182212A4F0E060080CBD0 /* GameModeChooserViewController.swift */; };
+		B05CEF9B2BEEAA6100ABA6F7 /* GameScoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B2FD292B61DC8D00B1804C /* GameScoreModel.swift */; };
+		B05CEF9C2BEEAA6100ABA6F7 /* EndOfGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A6E5F22B913E2D00BFA2B3 /* EndOfGameViewModel.swift */; };
+		B05CEF9D2BEEAA6100ABA6F7 /* GameDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06EA46F2BD90BC30064936B /* GameDatabase.swift */; };
+		B05CEF9E2BEEAA6100ABA6F7 /* VfxLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C66E9F2B6790BE00322BD0 /* VfxLauncher.swift */; };
+		B05CEF9F2BEEAA6100ABA6F7 /* HelpAndCreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03A42F12BC49BDE005B6BDB /* HelpAndCreditsViewController.swift */; };
+		B05CEFA02BEEAA6100ABA6F7 /* DeviceOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E1C9022BA25CCF006204FB /* DeviceOrientation.swift */; };
+		B05CEFA12BEEAA6100ABA6F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00E11242A2F1E7D000EE804 /* AppDelegate.swift */; };
+		B05CEFA22BEEAA6100ABA6F7 /* HelperForSwipingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BC2F8C2AE6C696005EAD24 /* HelperForSwipingViewController.swift */; };
+		B05CEFA32BEEAA6100ABA6F7 /* VfxBouncingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03BE9D02B7174080069842F /* VfxBouncingViewController.swift */; };
+		B05CEFA42BEEAA6100ABA6F7 /* WeakWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C66EA12B6794EC00322BD0 /* WeakWrapper.swift */; };
+		B05CEFA52BEEAA6100ABA6F7 /* StagesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09C212E2B88D51C005EC5FF /* StagesCollectionViewController.swift */; };
+		B05CEFA62BEEAA6100ABA6F7 /* ScoreRankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B044684E2B6D1D2D0091A151 /* ScoreRankViewController.swift */; };
+		B05CEFA72BEEAA6100ABA6F7 /* DeckModelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E085002B8CDF9D0045B0C6 /* DeckModelBuilder.swift */; };
+		B05CEFA82BEEAA6100ABA6F7 /* GameProcessViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03BE9EE2B76B2280069842F /* GameProcessViewModel.swift */; };
+		B05CEFA92BEEAA6100ABA6F7 /* ProgressionBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A6E5FF2B924D2100BFA2B3 /* ProgressionBarView.swift */; };
+		B05CEFAA2BEEAA6100ABA6F7 /* DealerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E22C132B54A77200B53F1B /* DealerViewModel.swift */; };
+		B05CEFAB2BEEAA6100ABA6F7 /* BackgroundsLibraryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03A42EB2BBD9947005B6BDB /* BackgroundsLibraryModel.swift */; };
+		B05CEFAC2BEEAA6100ABA6F7 /* FictiveCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D025772B95EDC300196377 /* FictiveCardView.swift */; };
+		B05CEFAD2BEEAA6100ABA6F7 /* MatchingCardsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06DF6652B48B67F00B88E7D /* MatchingCardsModel.swift */; };
+		B05CEFAE2BEEAA6100ABA6F7 /* CoreGraphicsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A6F6AA2A9F7DEB0027B33C /* CoreGraphicsExtensions.swift */; };
+		B05CEFAF2BEEAA6100ABA6F7 /* RoundedShadowedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00029312B963CDC00754519 /* RoundedShadowedView.swift */; };
+		B05CEFB02BEEAA6100ABA6F7 /* GametableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E22C232B54CF0A00B53F1B /* GametableViewModel.swift */; };
+		B05CEFB12BEEAA6100ABA6F7 /* LevelsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A6E5EC2B8F59AF00BFA2B3 /* LevelsCollectionViewCell.swift */; };
+		B05CEFB22BEEAA6100ABA6F7 /* ObservableProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF2C902AB9C79C00D6DF4D /* ObservableProperty.swift */; };
+		B05CEFB32BEEAA6100ABA6F7 /* DeckModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E22C1F2B54C40900B53F1B /* DeckModelProtocol.swift */; };
+		B05CEFB42BEEAA6100ABA6F7 /* DoubleImageDeckModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03BE9F42B77AD770069842F /* DoubleImageDeckModel.swift */; };
+		B05CEFB52BEEAA6100ABA6F7 /* VfxParticlesExplosionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03BE9CE2B7170C00069842F /* VfxParticlesExplosionViewController.swift */; };
+		B05CEFB62BEEAA6100ABA6F7 /* VfxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C66EA32B69D6D200322BD0 /* VfxViewController.swift */; };
+		B05CEFB72BEEAA6100ABA6F7 /* ImagesLibraryPickerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03BE9D62B73A8810069842F /* ImagesLibraryPickerModel.swift */; };
+		B05CEFB82BEEAA6100ABA6F7 /* LevelsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A6E5E42B8E18AA00BFA2B3 /* LevelsCollectionViewController.swift */; };
+		B05CEFB92BEEAA6100ABA6F7 /* TwoDimensionsFramework.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09A5E7B2B57F50D0027D25D /* TwoDimensionsFramework.swift */; };
+		B05CEFBA2BEEAA6100ABA6F7 /* ScoreEffectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09509B42BADA35F005F5F45 /* ScoreEffectViewModel.swift */; };
+		B05CEFBB2BEEAA6100ABA6F7 /* VfxMovingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03BE9CC2B716FD30069842F /* VfxMovingViewController.swift */; };
+		B05CEFBC2BEEAA6100ABA6F7 /* LevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00182242A51B4430080CBD0 /* LevelViewController.swift */; };
+		B05CEFBD2BEEAA6100ABA6F7 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E22C092B5048BE00B53F1B /* CardViewController.swift */; };
+		B05CEFBE2BEEAA6100ABA6F7 /* CardsDealerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C4E2302B0F94A4001AD379 /* CardsDealerViewController.swift */; };
+		B05CEFBF2BEEAA6100ABA6F7 /* LauncherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09783AB2BBCD3F300B374B1 /* LauncherViewController.swift */; };
+		B05CEFC02BEEAA6100ABA6F7 /* LevelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03BE9D42B724ACD0069842F /* LevelModel.swift */; };
+		B05CEFC12BEEAA6100ABA6F7 /* ControllersDebugExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0877C242BE8BE0400320CA2 /* ControllersDebugExtensions.swift */; };
+		B05CEFC22BEEAA6100ABA6F7 /* ParticlesLibraryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C2E0D62BB72852009FDAE3 /* ParticlesLibraryViewModel.swift */; };
+		B05CEFC32BEEAA6100ABA6F7 /* PlayableCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00E1A102AC1D73E002389FF /* PlayableCardViewController.swift */; };
+		B05CEFC42BEEAA6100ABA6F7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00E11262A2F1E7D000EE804 /* SceneDelegate.swift */; };
+		B05CEFC52BEEAA6100ABA6F7 /* ImagesLibraryDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A6E5F82B91F8D200BFA2B3 /* ImagesLibraryDatabase.swift */; };
+		B05CEFC62BEEAA6100ABA6F7 /* ScoreEngineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E22C1B2B54AACA00B53F1B /* ScoreEngineViewModel.swift */; };
+		B05CEFC72BEEAA6100ABA6F7 /* StageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03BE9EC2B76904B0069842F /* StageModel.swift */; };
+		B05CEFC82BEEAA6100ABA6F7 /* SafeboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D6D4552BA1E4120083D8AC /* SafeboxViewController.swift */; };
+		B05CEFC92BEEAA6100ABA6F7 /* SinglePlayingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E22C172B54A93F00B53F1B /* SinglePlayingViewModel.swift */; };
+		B05CEFCA2BEEAA6100ABA6F7 /* PlayingEngineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E22C152B54A82300B53F1B /* PlayingEngineViewModel.swift */; };
+		B05CEFCB2BEEAA6100ABA6F7 /* VfxEndOfGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E22C0D2B50552000B53F1B /* VfxEndOfGameViewController.swift */; };
+		B05CEFCC2BEEAA6100ABA6F7 /* LevelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03BE9DC2B7514BA0069842F /* LevelViewModel.swift */; };
+		B05CEFCD2BEEAA6100ABA6F7 /* LevelsLibraryDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A6E5F62B91719200BFA2B3 /* LevelsLibraryDatabase.swift */; };
+		B05CEFCE2BEEAA6100ABA6F7 /* LevelsLibraryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03BE9F02B76B46D0069842F /* LevelsLibraryViewModel.swift */; };
+		B05CEFCF2BEEAA6100ABA6F7 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B502F62A582F23003EADB5 /* CardView.swift */; };
+		B05CEFD02BEEAA6100ABA6F7 /* FictiveGametableRepresentationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A6E5EA2B8E328200BFA2B3 /* FictiveGametableRepresentationView.swift */; };
+		B05CEFD12BEEAA6100ABA6F7 /* StagesCollectionContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C598F12BA8419200EDCAC8 /* StagesCollectionContainerView.swift */; };
+		B05CEFD22BEEAA6100ABA6F7 /* PresentationCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09C21322B890E66005EC5FF /* PresentationCardViewController.swift */; };
+		B05CEFD32BEEAA6100ABA6F7 /* ImagesLibrarySharedPickerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0687C4B2BA062730067BC03 /* ImagesLibrarySharedPickerModel.swift */; };
+		B05CEFD42BEEAA6100ABA6F7 /* StagesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09C21302B88D662005EC5FF /* StagesCollectionViewCell.swift */; };
+		B05CEFD52BEEAA6100ABA6F7 /* LevelsLibraryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03BE9E82B76395D0069842F /* LevelsLibraryModel.swift */; };
+		B05CEFD62BEEAA6100ABA6F7 /* EndOfGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B045559C2B6B0C5900F31F6B /* EndOfGameViewController.swift */; };
+		B05CEFD92BEEAA6100ABA6F7 /* LevelsCollectionViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0A6E5E82B8E221A00BFA2B3 /* LevelsCollectionViewController.storyboard */; };
+		B05CEFDA2BEEAA6100ABA6F7 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0A6E5EE2B8F6A7D00BFA2B3 /* Icons.xcassets */; };
+		B05CEFDB2BEEAA6100ABA6F7 /* Safebox.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0687C512BA0BD470067BC03 /* Safebox.storyboard */; };
+		B05CEFDC2BEEAA6100ABA6F7 /* HelpAndCreditsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B03A42F22BC49BDE005B6BDB /* HelpAndCreditsViewController.xib */; };
+		B05CEFDD2BEEAA6100ABA6F7 /* ScoreRankView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B044684F2B6D1D2D0091A151 /* ScoreRankView.xib */; };
+		B05CEFDE2BEEAA6100ABA6F7 /* ProgressionBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B03BE9C52B6DA1B70069842F /* ProgressionBarView.xib */; };
+		B05CEFDF2BEEAA6100ABA6F7 /* Particles.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B09509B02BAD9718005F5F45 /* Particles.xcassets */; };
+		B05CEFE02BEEAA6100ABA6F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B00E112F2A2F1E7E000EE804 /* LaunchScreen.storyboard */; };
+		B05CEFE12BEEAA6100ABA6F7 /* Backgrounds.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B03A42E92BBD904A005B6BDB /* Backgrounds.xcassets */; };
+		B05CEFE22BEEAA6100ABA6F7 /* CardsDealerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0C4E2312B0F94A4001AD379 /* CardsDealerViewController.xib */; };
+		B05CEFE32BEEAA6100ABA6F7 /* HelperForSwipingViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0D674D22AEB1AE1006F5EC5 /* HelperForSwipingViewController.storyboard */; };
+		B05CEFE42BEEAA6100ABA6F7 /* CardCovers.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0F381412BDE70F3009B294F /* CardCovers.xcassets */; };
+		B05CEFE52BEEAA6100ABA6F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B00E112D2A2F1E7E000EE804 /* Assets.xcassets */; };
+		B05CEFE62BEEAA6100ABA6F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B00E112A2A2F1E7D000EE804 /* Main.storyboard */; };
+		B05CEFE72BEEAA6100ABA6F7 /* CardImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0C0D6D82B98E120005D4120 /* CardImages.xcassets */; };
+		B05CEFE82BEEAA6100ABA6F7 /* Decorations.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B06E9E332BB185BF00DDA195 /* Decorations.xcassets */; };
+		B05CEFF12BEEAB2B00ABA6F7 /* AppDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05CEFF02BEEAB2B00ABA6F7 /* AppDelegateExtension.swift */; };
+		B05CEFF32BEEAB8000ABA6F7 /* LevelViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05CEFF22BEEAB8000ABA6F7 /* LevelViewControllerExtension.swift */; };
+		B05CEFF52BEF793400ABA6F7 /* GameModeChooserViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05CEFF42BEF793400ABA6F7 /* GameModeChooserViewControllerExtension.swift */; };
+		B05FDD2B2B18F13900E57C8B /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05FDD2A2B18F13900E57C8B /* UIKitExtensions.swift */; };
+		B06864792BE143B6009A88BE /* ScoreRankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06864782BE143B6009A88BE /* ScoreRankView.swift */; };
+		B0687C4C2BA062730067BC03 /* ImagesLibrarySharedPickerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0687C4B2BA062730067BC03 /* ImagesLibrarySharedPickerModel.swift */; };
+		B0687C522BA0BD470067BC03 /* Safebox.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0687C512BA0BD470067BC03 /* Safebox.storyboard */; };
+		B06DF6662B48B67F00B88E7D /* MatchingCardsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06DF6652B48B67F00B88E7D /* MatchingCardsModel.swift */; };
+		B06DF6682B48B92A00B88E7D /* MatchingCardsModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06DF6672B48B92A00B88E7D /* MatchingCardsModelTests.swift */; };
+		B06DF66A2B48BA3100B88E7D /* TestsValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06DF6692B48BA3100B88E7D /* TestsValues.swift */; };
+		B06DF66C2B48C26900B88E7D /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06DF66B2B48C26900B88E7D /* CardViewModel.swift */; };
+		B06E9E342BB185BF00DDA195 /* Decorations.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B06E9E332BB185BF00DDA195 /* Decorations.xcassets */; };
+		B06EA4702BD90BC30064936B /* GameDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06EA46F2BD90BC30064936B /* GameDatabase.swift */; };
+		B0877C252BE8BE0400320CA2 /* ControllersDebugExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0877C242BE8BE0400320CA2 /* ControllersDebugExtensions.swift */; };
+		B09509B12BAD9718005F5F45 /* Particles.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B09509B02BAD9718005F5F45 /* Particles.xcassets */; };
+		B09509B52BADA35F005F5F45 /* ScoreEffectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09509B42BADA35F005F5F45 /* ScoreEffectViewModel.swift */; };
+		B09783AC2BBCD3F300B374B1 /* LauncherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09783AB2BBCD3F300B374B1 /* LauncherViewController.swift */; };
+		B09A5E7C2B57F50D0027D25D /* TwoDimensionsFramework.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09A5E7B2B57F50D0027D25D /* TwoDimensionsFramework.swift */; };
+		B09C212F2B88D51C005EC5FF /* StagesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09C212E2B88D51C005EC5FF /* StagesCollectionViewController.swift */; };
+		B09C21312B88D662005EC5FF /* StagesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09C21302B88D662005EC5FF /* StagesCollectionViewCell.swift */; };
+		B09C21332B890E66005EC5FF /* PresentationCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09C21322B890E66005EC5FF /* PresentationCardViewController.swift */; };
+		B0A6E5E62B8E18AA00BFA2B3 /* LevelsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A6E5E42B8E18AA00BFA2B3 /* LevelsCollectionViewController.swift */; };
+		B0A6E5E92B8E221A00BFA2B3 /* LevelsCollectionViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0A6E5E82B8E221A00BFA2B3 /* LevelsCollectionViewController.storyboard */; };
+		B0A6E5EB2B8E328200BFA2B3 /* FictiveGametableRepresentationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A6E5EA2B8E328200BFA2B3 /* FictiveGametableRepresentationView.swift */; };
+		B0A6E5ED2B8F59AF00BFA2B3 /* LevelsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A6E5EC2B8F59AF00BFA2B3 /* LevelsCollectionViewCell.swift */; };
+		B0A6E5EF2B8F6A7D00BFA2B3 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0A6E5EE2B8F6A7D00BFA2B3 /* Icons.xcassets */; };
+		B0A6E5F12B8F777000BFA2B3 /* MockLevelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A6E5F02B8F777000BFA2B3 /* MockLevelModel.swift */; };
+		B0A6E5F32B913E2D00BFA2B3 /* EndOfGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A6E5F22B913E2D00BFA2B3 /* EndOfGameViewModel.swift */; };
+		B0A6E5F72B91719200BFA2B3 /* LevelsLibraryDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A6E5F62B91719200BFA2B3 /* LevelsLibraryDatabase.swift */; };
+		B0A6E5F92B91F8D200BFA2B3 /* ImagesLibraryDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A6E5F82B91F8D200BFA2B3 /* ImagesLibraryDatabase.swift */; };
+		B0A6E5FE2B92402C00BFA2B3 /* MockLevelViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A6E5FD2B92402C00BFA2B3 /* MockLevelViewControllerDelegate.swift */; };
+		B0A6E6002B924D2100BFA2B3 /* ProgressionBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A6E5FF2B924D2100BFA2B3 /* ProgressionBarView.swift */; };
+		B0A6F6AB2A9F7DEB0027B33C /* CoreGraphicsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A6F6AA2A9F7DEB0027B33C /* CoreGraphicsExtensions.swift */; };
+		B0B2FD2A2B61DC8D00B1804C /* GameScoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B2FD292B61DC8D00B1804C /* GameScoreModel.swift */; };
+		B0B5E0652A52D4A700E9D884 /* GametableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B5E0642A52D4A700E9D884 /* GametableView.swift */; };
+		B0BC2F8D2AE6C696005EAD24 /* HelperForSwipingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BC2F8C2AE6C696005EAD24 /* HelperForSwipingViewController.swift */; };
+		B0BF2C912AB9C79C00D6DF4D /* ObservableProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF2C902AB9C79C00D6DF4D /* ObservableProperty.swift */; };
+		B0C0D6D92B98E120005D4120 /* CardImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0C0D6D82B98E120005D4120 /* CardImages.xcassets */; };
+		B0C2E0D72BB72852009FDAE3 /* ParticlesLibraryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C2E0D62BB72852009FDAE3 /* ParticlesLibraryViewModel.swift */; };
+		B0C2E0D92BB72882009FDAE3 /* ParticlesLibraryViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C2E0D82BB72882009FDAE3 /* ParticlesLibraryViewModelTests.swift */; };
+		B0C4E2322B0F94A4001AD379 /* CardsDealerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C4E2302B0F94A4001AD379 /* CardsDealerViewController.swift */; };
+		B0C4E2332B0F94A4001AD379 /* CardsDealerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0C4E2312B0F94A4001AD379 /* CardsDealerViewController.xib */; };
+		B0C557E92B0B5DE5003E33D1 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C557E82B0B5DE5003E33D1 /* main.swift */; };
+		B0C598F22BA8419200EDCAC8 /* StagesCollectionContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C598F12BA8419200EDCAC8 /* StagesCollectionContainerView.swift */; };
+		B0C66EA02B6790BF00322BD0 /* VfxLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C66E9F2B6790BE00322BD0 /* VfxLauncher.swift */; };
+		B0C66EA22B6794EC00322BD0 /* WeakWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C66EA12B6794EC00322BD0 /* WeakWrapper.swift */; };
+		B0C66EA42B69D6D200322BD0 /* VfxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C66EA32B69D6D200322BD0 /* VfxViewController.swift */; };
+		B0D025782B95EDC300196377 /* FictiveCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D025772B95EDC300196377 /* FictiveCardView.swift */; };
+		B0D674D32AEB1AE2006F5EC5 /* HelperForSwipingViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0D674D22AEB1AE1006F5EC5 /* HelperForSwipingViewController.storyboard */; };
+		B0D6D4562BA1E4120083D8AC /* SafeboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D6D4552BA1E4120083D8AC /* SafeboxViewController.swift */; };
+		B0DABB272B444DBF0013E5D2 /* LevelViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DABB262B444DBF0013E5D2 /* LevelViewControllerTests.swift */; };
+		B0DD2FF52B0B4EC9008A5B65 /* UnitTestingAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DD2FF42B0B4EC9008A5B65 /* UnitTestingAppDelegate.swift */; };
+		B0E085012B8CDF9D0045B0C6 /* DeckModelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E085002B8CDF9D0045B0C6 /* DeckModelBuilder.swift */; };
+		B0E085032B8CEF6D0045B0C6 /* StageViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E085022B8CEF6D0045B0C6 /* StageViewModelTests.swift */; };
+		B0E1C9032BA25CCF006204FB /* DeviceOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E1C9022BA25CCF006204FB /* DeviceOrientation.swift */; };
+		B0E22C0A2B5048BE00B53F1B /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E22C092B5048BE00B53F1B /* CardViewController.swift */; };
+		B0E22C0E2B50552000B53F1B /* VfxEndOfGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E22C0D2B50552000B53F1B /* VfxEndOfGameViewController.swift */; };
+		B0E22C122B54A2A800B53F1B /* ImagesLibraryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E22C112B54A2A800B53F1B /* ImagesLibraryModel.swift */; };
+		B0E22C142B54A77200B53F1B /* DealerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E22C132B54A77200B53F1B /* DealerViewModel.swift */; };
+		B0E22C162B54A82300B53F1B /* PlayingEngineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E22C152B54A82300B53F1B /* PlayingEngineViewModel.swift */; };
+		B0E22C182B54A93F00B53F1B /* SinglePlayingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E22C172B54A93F00B53F1B /* SinglePlayingViewModel.swift */; };
+		B0E22C1A2B54A9B600B53F1B /* MultiPlayingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E22C192B54A9B600B53F1B /* MultiPlayingViewModel.swift */; };
+		B0E22C1C2B54AACA00B53F1B /* ScoreEngineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E22C1B2B54AACA00B53F1B /* ScoreEngineViewModel.swift */; };
+		B0E22C1E2B54BC7900B53F1B /* ImagesLibraryModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E22C1D2B54BC7900B53F1B /* ImagesLibraryModelTests.swift */; };
+		B0E22C202B54C40900B53F1B /* DeckModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E22C1F2B54C40900B53F1B /* DeckModelProtocol.swift */; };
+		B0E22C222B54C67E00B53F1B /* DeckModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E22C212B54C67E00B53F1B /* DeckModelTests.swift */; };
+		B0E22C242B54CF0A00B53F1B /* GametableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E22C232B54CF0A00B53F1B /* GametableViewModel.swift */; };
+		B0E22C262B55255C00B53F1B /* GametableViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E22C252B55255C00B53F1B /* GametableViewModelTests.swift */; };
+		B0E22C282B55848100B53F1B /* CardViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E22C272B55848100B53F1B /* CardViewModelTests.swift */; };
+		B0E22C2A2B560ABC00B53F1B /* DealerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E22C292B560ABC00B53F1B /* DealerViewModelTests.swift */; };
+		B0E868652B8CA2FC0003DADB /* StageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E868642B8CA2FC0003DADB /* StageViewModel.swift */; };
+		B0EB12182AC57B1900F2C055 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B502F62A582F23003EADB5 /* CardView.swift */; };
+		B0EB121B2ACAE42A00F2C055 /* OptionalExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EB121A2ACAE42A00F2C055 /* OptionalExtensions.swift */; };
+		B0EB121D2ACD6F2F00F2C055 /* FoundationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EB121C2ACD6F2F00F2C055 /* FoundationExtensions.swift */; };
+		B0F381362BD17002009B294F /* ScoreRankViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F381352BD17002009B294F /* ScoreRankViewControllerTests.swift */; };
+		B0F381382BD2B47B009B294F /* ImagesLibraryDatabaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F381372BD2B47B009B294F /* ImagesLibraryDatabaseTests.swift */; };
+		B0F3813A2BD686D0009B294F /* MockUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F381392BD686D0009B294F /* MockUserDefaults.swift */; };
+		B0F3813C2BD6BFD9009B294F /* MockImagesLibraryDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F3813B2BD6BFD9009B294F /* MockImagesLibraryDatabase.swift */; };
+		B0F3813E2BD87B99009B294F /* MockLevelsLibraryDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F3813D2BD87B99009B294F /* MockLevelsLibraryDatabase.swift */; };
+		B0F381402BD87C61009B294F /* LevelsLibraryDatabaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F3813F2BD87C61009B294F /* LevelsLibraryDatabaseTests.swift */; };
+		B0F381422BDE70F3009B294F /* CardCovers.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0F381412BDE70F3009B294F /* CardCovers.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B00E11382A2F1E7E000EE804 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B00E11192A2F1E7D000EE804 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B00E11202A2F1E7D000EE804;
+			remoteInfo = "Concentration-Storyboard";
+		};
+		B00E11422A2F1E7E000EE804 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B00E11192A2F1E7D000EE804 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B00E11202A2F1E7D000EE804;
+			remoteInfo = "Concentration-Storyboard";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B05CEFE92BEEAA6100ABA6F7 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0EB120F2AC56A4E00F2C055 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		B00029312B963CDC00754519 /* RoundedShadowedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShadowedView.swift; sourceTree = "<group>"; };
+		B00182212A4F0E060080CBD0 /* GameModeChooserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModeChooserViewController.swift; sourceTree = "<group>"; };
+		B00182242A51B4430080CBD0 /* LevelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelViewController.swift; sourceTree = "<group>"; };
+		B00E11212A2F1E7D000EE804 /* FlipMe-OpenSource.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FlipMe-OpenSource.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B00E11242A2F1E7D000EE804 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B00E11262A2F1E7D000EE804 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		B00E112B2A2F1E7D000EE804 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B00E112D2A2F1E7E000EE804 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B00E11302A2F1E7E000EE804 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B00E11322A2F1E7E000EE804 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B00E11372A2F1E7E000EE804 /* FlipMe-OpenSourceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FlipMe-OpenSourceTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B00E113B2A2F1E7E000EE804 /* Concentration_StoryboardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Concentration_StoryboardTests.swift; sourceTree = "<group>"; };
+		B00E11412A2F1E7E000EE804 /* FlipMe-OpenSourceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FlipMe-OpenSourceUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B00E11452A2F1E7E000EE804 /* Concentration_StoryboardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Concentration_StoryboardUITests.swift; sourceTree = "<group>"; };
+		B00E11472A2F1E7E000EE804 /* Concentration_StoryboardUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Concentration_StoryboardUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B00E1A102AC1D73E002389FF /* PlayableCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayableCardViewController.swift; sourceTree = "<group>"; };
+		B03A42E92BBD904A005B6BDB /* Backgrounds.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Backgrounds.xcassets; sourceTree = "<group>"; };
+		B03A42EB2BBD9947005B6BDB /* BackgroundsLibraryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundsLibraryModel.swift; sourceTree = "<group>"; };
+		B03A42ED2BBDABFF005B6BDB /* BackgroundsLibraryModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundsLibraryModelTests.swift; sourceTree = "<group>"; };
+		B03A42F12BC49BDE005B6BDB /* HelpAndCreditsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpAndCreditsViewController.swift; sourceTree = "<group>"; };
+		B03A42F22BC49BDE005B6BDB /* HelpAndCreditsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HelpAndCreditsViewController.xib; sourceTree = "<group>"; };
+		B03BE9C52B6DA1B70069842F /* ProgressionBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProgressionBarView.xib; sourceTree = "<group>"; };
+		B03BE9CC2B716FD30069842F /* VfxMovingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VfxMovingViewController.swift; sourceTree = "<group>"; };
+		B03BE9CE2B7170C00069842F /* VfxParticlesExplosionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VfxParticlesExplosionViewController.swift; sourceTree = "<group>"; };
+		B03BE9D02B7174080069842F /* VfxBouncingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VfxBouncingViewController.swift; sourceTree = "<group>"; };
+		B03BE9D22B7249530069842F /* SingleImageDeckModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleImageDeckModel.swift; sourceTree = "<group>"; };
+		B03BE9D42B724ACD0069842F /* LevelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelModel.swift; sourceTree = "<group>"; };
+		B03BE9D62B73A8810069842F /* ImagesLibraryPickerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesLibraryPickerModel.swift; sourceTree = "<group>"; };
+		B03BE9D82B73ACC50069842F /* ImagesLibraryPickerModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesLibraryPickerModelTests.swift; sourceTree = "<group>"; };
+		B03BE9DA2B73AD3A0069842F /* MockImagesLibraryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockImagesLibraryModel.swift; sourceTree = "<group>"; };
+		B03BE9DC2B7514BA0069842F /* LevelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelViewModel.swift; sourceTree = "<group>"; };
+		B03BE9DE2B751B190069842F /* MockLevelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLevelViewModel.swift; sourceTree = "<group>"; };
+		B03BE9E02B751DEB0069842F /* LevelViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelViewModelTests.swift; sourceTree = "<group>"; };
+		B03BE9E22B7532FE0069842F /* MockDealerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDealerViewModel.swift; sourceTree = "<group>"; };
+		B03BE9E42B7533710069842F /* MockPlayingEngineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPlayingEngineViewModel.swift; sourceTree = "<group>"; };
+		B03BE9E62B7571C50069842F /* MockImagesLibraryPickerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockImagesLibraryPickerModel.swift; sourceTree = "<group>"; };
+		B03BE9E82B76395D0069842F /* LevelsLibraryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsLibraryModel.swift; sourceTree = "<group>"; };
+		B03BE9EA2B768B6E0069842F /* LevelsLibraryModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsLibraryModelTests.swift; sourceTree = "<group>"; };
+		B03BE9EC2B76904B0069842F /* StageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageModel.swift; sourceTree = "<group>"; };
+		B03BE9EE2B76B2280069842F /* GameProcessViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameProcessViewModel.swift; sourceTree = "<group>"; };
+		B03BE9F02B76B46D0069842F /* LevelsLibraryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsLibraryViewModel.swift; sourceTree = "<group>"; };
+		B03BE9F42B77AD770069842F /* DoubleImageDeckModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleImageDeckModel.swift; sourceTree = "<group>"; };
+		B044684E2B6D1D2D0091A151 /* ScoreRankViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreRankViewController.swift; sourceTree = "<group>"; };
+		B044684F2B6D1D2D0091A151 /* ScoreRankView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScoreRankView.xib; sourceTree = "<group>"; };
+		B045559C2B6B0C5900F31F6B /* EndOfGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndOfGameViewController.swift; sourceTree = "<group>"; };
+		B04720402B3F6D0A004B9BE5 /* AddingCardsViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddingCardsViewControllerTests.swift; sourceTree = "<group>"; };
+		B04D095A2C125B1F002AB763 /* ReviewRequesterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewRequesterModel.swift; sourceTree = "<group>"; };
+		B053A7992B598992006AC379 /* SinglePlayingViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinglePlayingViewModelTests.swift; sourceTree = "<group>"; };
+		B053A79B2B598AF8006AC379 /* MockDeckModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDeckModel.swift; sourceTree = "<group>"; };
+		B053A79D2B598C65006AC379 /* MockPlayingEngineViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPlayingEngineViewModelDelegate.swift; sourceTree = "<group>"; };
+		B053A79F2B598DC3006AC379 /* MockScoreEngineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockScoreEngineViewModel.swift; sourceTree = "<group>"; };
+		B053A7A12B599184006AC379 /* MockGametableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockGametableViewModel.swift; sourceTree = "<group>"; };
+		B05CEFED2BEEAA6100ABA6F7 /* FlipMe-OpenSourceDemos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FlipMe-OpenSourceDemos.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B05CEFEE2BEEAA6100ABA6F7 /* Concentration-StoryboardDemos-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Concentration-StoryboardDemos-Info.plist"; path = "/Users/steven/dev/xcode/p-004-concentration-storyboard/dev/Concentration-StoryboardDemos-Info.plist"; sourceTree = "<absolute>"; };
+		B05CEFF02BEEAB2B00ABA6F7 /* AppDelegateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateExtension.swift; sourceTree = "<group>"; };
+		B05CEFF22BEEAB8000ABA6F7 /* LevelViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelViewControllerExtension.swift; sourceTree = "<group>"; };
+		B05CEFF42BEF793400ABA6F7 /* GameModeChooserViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModeChooserViewControllerExtension.swift; sourceTree = "<group>"; };
+		B05FDD2A2B18F13900E57C8B /* UIKitExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitExtensions.swift; sourceTree = "<group>"; };
+		B06864782BE143B6009A88BE /* ScoreRankView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreRankView.swift; sourceTree = "<group>"; };
+		B0687C4B2BA062730067BC03 /* ImagesLibrarySharedPickerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesLibrarySharedPickerModel.swift; sourceTree = "<group>"; };
+		B0687C512BA0BD470067BC03 /* Safebox.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Safebox.storyboard; sourceTree = "<group>"; };
+		B06DF6652B48B67F00B88E7D /* MatchingCardsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingCardsModel.swift; sourceTree = "<group>"; };
+		B06DF6672B48B92A00B88E7D /* MatchingCardsModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingCardsModelTests.swift; sourceTree = "<group>"; };
+		B06DF6692B48BA3100B88E7D /* TestsValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestsValues.swift; sourceTree = "<group>"; };
+		B06DF66B2B48C26900B88E7D /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
+		B06E9E332BB185BF00DDA195 /* Decorations.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Decorations.xcassets; sourceTree = "<group>"; };
+		B06EA46F2BD90BC30064936B /* GameDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDatabase.swift; sourceTree = "<group>"; };
+		B0877C242BE8BE0400320CA2 /* ControllersDebugExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllersDebugExtensions.swift; sourceTree = "<group>"; };
+		B09509B02BAD9718005F5F45 /* Particles.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Particles.xcassets; sourceTree = "<group>"; };
+		B09509B42BADA35F005F5F45 /* ScoreEffectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreEffectViewModel.swift; sourceTree = "<group>"; };
+		B09783AB2BBCD3F300B374B1 /* LauncherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LauncherViewController.swift; sourceTree = "<group>"; };
+		B09A5E7B2B57F50D0027D25D /* TwoDimensionsFramework.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoDimensionsFramework.swift; sourceTree = "<group>"; };
+		B09C212E2B88D51C005EC5FF /* StagesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StagesCollectionViewController.swift; sourceTree = "<group>"; };
+		B09C21302B88D662005EC5FF /* StagesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StagesCollectionViewCell.swift; path = "Concentration-Storyboard/Views/StagesCollectionViewCell.swift"; sourceTree = SOURCE_ROOT; };
+		B09C21322B890E66005EC5FF /* PresentationCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationCardViewController.swift; sourceTree = "<group>"; };
+		B0A6E5E42B8E18AA00BFA2B3 /* LevelsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsCollectionViewController.swift; sourceTree = "<group>"; };
+		B0A6E5E82B8E221A00BFA2B3 /* LevelsCollectionViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LevelsCollectionViewController.storyboard; sourceTree = "<group>"; };
+		B0A6E5EA2B8E328200BFA2B3 /* FictiveGametableRepresentationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FictiveGametableRepresentationView.swift; sourceTree = "<group>"; };
+		B0A6E5EC2B8F59AF00BFA2B3 /* LevelsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsCollectionViewCell.swift; sourceTree = "<group>"; };
+		B0A6E5EE2B8F6A7D00BFA2B3 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
+		B0A6E5F02B8F777000BFA2B3 /* MockLevelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLevelModel.swift; sourceTree = "<group>"; };
+		B0A6E5F22B913E2D00BFA2B3 /* EndOfGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndOfGameViewModel.swift; sourceTree = "<group>"; };
+		B0A6E5F62B91719200BFA2B3 /* LevelsLibraryDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsLibraryDatabase.swift; sourceTree = "<group>"; };
+		B0A6E5F82B91F8D200BFA2B3 /* ImagesLibraryDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesLibraryDatabase.swift; sourceTree = "<group>"; };
+		B0A6E5FD2B92402C00BFA2B3 /* MockLevelViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLevelViewControllerDelegate.swift; sourceTree = "<group>"; };
+		B0A6E5FF2B924D2100BFA2B3 /* ProgressionBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressionBarView.swift; sourceTree = "<group>"; };
+		B0A6F6AA2A9F7DEB0027B33C /* CoreGraphicsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreGraphicsExtensions.swift; sourceTree = "<group>"; };
+		B0B2FD292B61DC8D00B1804C /* GameScoreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScoreModel.swift; sourceTree = "<group>"; };
+		B0B502F62A582F23003EADB5 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		B0B5E0642A52D4A700E9D884 /* GametableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GametableView.swift; sourceTree = "<group>"; };
+		B0BAC8012B0682FA00B029AD /* UnitTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = UnitTests.xctestplan; sourceTree = "<group>"; };
+		B0BC2F8C2AE6C696005EAD24 /* HelperForSwipingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperForSwipingViewController.swift; sourceTree = "<group>"; };
+		B0BF2C902AB9C79C00D6DF4D /* ObservableProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableProperty.swift; sourceTree = "<group>"; };
+		B0C0D6D82B98E120005D4120 /* CardImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = CardImages.xcassets; sourceTree = "<group>"; };
+		B0C2E0D62BB72852009FDAE3 /* ParticlesLibraryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticlesLibraryViewModel.swift; sourceTree = "<group>"; };
+		B0C2E0D82BB72882009FDAE3 /* ParticlesLibraryViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticlesLibraryViewModelTests.swift; sourceTree = "<group>"; };
+		B0C4E2302B0F94A4001AD379 /* CardsDealerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsDealerViewController.swift; sourceTree = "<group>"; };
+		B0C4E2312B0F94A4001AD379 /* CardsDealerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardsDealerViewController.xib; sourceTree = "<group>"; };
+		B0C557E82B0B5DE5003E33D1 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		B0C598F12BA8419200EDCAC8 /* StagesCollectionContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StagesCollectionContainerView.swift; sourceTree = "<group>"; };
+		B0C66E9F2B6790BE00322BD0 /* VfxLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VfxLauncher.swift; sourceTree = "<group>"; };
+		B0C66EA12B6794EC00322BD0 /* WeakWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakWrapper.swift; sourceTree = "<group>"; };
+		B0C66EA32B69D6D200322BD0 /* VfxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VfxViewController.swift; sourceTree = "<group>"; };
+		B0D025772B95EDC300196377 /* FictiveCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FictiveCardView.swift; sourceTree = "<group>"; };
+		B0D674D22AEB1AE1006F5EC5 /* HelperForSwipingViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HelperForSwipingViewController.storyboard; sourceTree = "<group>"; };
+		B0D6D4552BA1E4120083D8AC /* SafeboxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeboxViewController.swift; sourceTree = "<group>"; };
+		B0DABB262B444DBF0013E5D2 /* LevelViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelViewControllerTests.swift; sourceTree = "<group>"; };
+		B0DD2FF42B0B4EC9008A5B65 /* UnitTestingAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTestingAppDelegate.swift; sourceTree = "<group>"; };
+		B0E085002B8CDF9D0045B0C6 /* DeckModelBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckModelBuilder.swift; sourceTree = "<group>"; };
+		B0E085022B8CEF6D0045B0C6 /* StageViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageViewModelTests.swift; sourceTree = "<group>"; };
+		B0E1C9022BA25CCF006204FB /* DeviceOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceOrientation.swift; sourceTree = "<group>"; };
+		B0E22C092B5048BE00B53F1B /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
+		B0E22C0D2B50552000B53F1B /* VfxEndOfGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VfxEndOfGameViewController.swift; sourceTree = "<group>"; };
+		B0E22C112B54A2A800B53F1B /* ImagesLibraryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesLibraryModel.swift; sourceTree = "<group>"; };
+		B0E22C132B54A77200B53F1B /* DealerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealerViewModel.swift; sourceTree = "<group>"; };
+		B0E22C152B54A82300B53F1B /* PlayingEngineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingEngineViewModel.swift; sourceTree = "<group>"; };
+		B0E22C172B54A93F00B53F1B /* SinglePlayingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinglePlayingViewModel.swift; sourceTree = "<group>"; };
+		B0E22C192B54A9B600B53F1B /* MultiPlayingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiPlayingViewModel.swift; sourceTree = "<group>"; };
+		B0E22C1B2B54AACA00B53F1B /* ScoreEngineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreEngineViewModel.swift; sourceTree = "<group>"; };
+		B0E22C1D2B54BC7900B53F1B /* ImagesLibraryModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesLibraryModelTests.swift; sourceTree = "<group>"; };
+		B0E22C1F2B54C40900B53F1B /* DeckModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckModelProtocol.swift; sourceTree = "<group>"; };
+		B0E22C212B54C67E00B53F1B /* DeckModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckModelTests.swift; sourceTree = "<group>"; };
+		B0E22C232B54CF0A00B53F1B /* GametableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GametableViewModel.swift; sourceTree = "<group>"; };
+		B0E22C252B55255C00B53F1B /* GametableViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GametableViewModelTests.swift; sourceTree = "<group>"; };
+		B0E22C272B55848100B53F1B /* CardViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModelTests.swift; sourceTree = "<group>"; };
+		B0E22C292B560ABC00B53F1B /* DealerViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealerViewModelTests.swift; sourceTree = "<group>"; };
+		B0E868642B8CA2FC0003DADB /* StageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageViewModel.swift; sourceTree = "<group>"; };
+		B0EB121A2ACAE42A00F2C055 /* OptionalExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalExtensions.swift; sourceTree = "<group>"; };
+		B0EB121C2ACD6F2F00F2C055 /* FoundationExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundationExtensions.swift; sourceTree = "<group>"; };
+		B0F381352BD17002009B294F /* ScoreRankViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreRankViewControllerTests.swift; sourceTree = "<group>"; };
+		B0F381372BD2B47B009B294F /* ImagesLibraryDatabaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesLibraryDatabaseTests.swift; sourceTree = "<group>"; };
+		B0F381392BD686D0009B294F /* MockUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserDefaults.swift; sourceTree = "<group>"; };
+		B0F3813B2BD6BFD9009B294F /* MockImagesLibraryDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockImagesLibraryDatabase.swift; sourceTree = "<group>"; };
+		B0F3813D2BD87B99009B294F /* MockLevelsLibraryDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLevelsLibraryDatabase.swift; sourceTree = "<group>"; };
+		B0F3813F2BD87C61009B294F /* LevelsLibraryDatabaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsLibraryDatabaseTests.swift; sourceTree = "<group>"; };
+		B0F381412BDE70F3009B294F /* CardCovers.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = CardCovers.xcassets; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B00E111E2A2F1E7D000EE804 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B00E11342A2F1E7E000EE804 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B00E113E2A2F1E7E000EE804 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B05CEFD72BEEAA6100ABA6F7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B00E11182A2F1E7D000EE804 = {
+			isa = PBXGroup;
+			children = (
+				B00E11232A2F1E7D000EE804 /* Concentration-Storyboard */,
+				B00E113A2A2F1E7E000EE804 /* Concentration-StoryboardTests */,
+				B00E11442A2F1E7E000EE804 /* Concentration-StoryboardUITests */,
+				B00E11222A2F1E7D000EE804 /* Products */,
+				B047203F2B3F6CBE004B9BE5 /* Recovered References */,
+				B05CEFEE2BEEAA6100ABA6F7 /* Concentration-StoryboardDemos-Info.plist */,
+			);
+			sourceTree = "<group>";
+		};
+		B00E11222A2F1E7D000EE804 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B00E11212A2F1E7D000EE804 /* FlipMe-OpenSource.app */,
+				B00E11372A2F1E7E000EE804 /* FlipMe-OpenSourceTests.xctest */,
+				B00E11412A2F1E7E000EE804 /* FlipMe-OpenSourceUITests.xctest */,
+				B05CEFED2BEEAA6100ABA6F7 /* FlipMe-OpenSourceDemos.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B00E11232A2F1E7D000EE804 /* Concentration-Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				B0BF2C8E2AB997E300D6DF4D /* Views */,
+				B0BF2C8D2AB997CF00D6DF4D /* Storyboards */,
+				B0BF2C8C2AB997C200D6DF4D /* Controllers */,
+				B0BF2C8B2AB997B300D6DF4D /* ViewModels */,
+				B0BF2C8A2AB9936F00D6DF4D /* Models */,
+				B06EA46C2BD906C10064936B /* Data */,
+				B0A6F6A92A9F7DAA0027B33C /* Utilities */,
+				B05CEFEF2BEEAABD00ABA6F7 /* Demos */,
+				B00E11242A2F1E7D000EE804 /* AppDelegate.swift */,
+				B00E11262A2F1E7D000EE804 /* SceneDelegate.swift */,
+				B00E112D2A2F1E7E000EE804 /* Assets.xcassets */,
+				B00E11322A2F1E7E000EE804 /* Info.plist */,
+				B0C557E82B0B5DE5003E33D1 /* main.swift */,
+				B06E9E332BB185BF00DDA195 /* Decorations.xcassets */,
+				B0A6E5EE2B8F6A7D00BFA2B3 /* Icons.xcassets */,
+				B0C0D6D82B98E120005D4120 /* CardImages.xcassets */,
+				B09509B02BAD9718005F5F45 /* Particles.xcassets */,
+				B03A42E92BBD904A005B6BDB /* Backgrounds.xcassets */,
+				B0F381412BDE70F3009B294F /* CardCovers.xcassets */,
+			);
+			path = "Concentration-Storyboard";
+			sourceTree = "<group>";
+		};
+		B00E113A2A2F1E7E000EE804 /* Concentration-StoryboardTests */ = {
+			isa = PBXGroup;
+			children = (
+				B047203D2B3F6C2F004B9BE5 /* Controllers */,
+				B047203C2B3F6BD0004B9BE5 /* ViewModels */,
+				B047203B2B3F6BC1004B9BE5 /* Models */,
+				B06EA46D2BD909120064936B /* Data */,
+				B00E113B2A2F1E7E000EE804 /* Concentration_StoryboardTests.swift */,
+				B0BAC8012B0682FA00B029AD /* UnitTests.xctestplan */,
+				B0DD2FF42B0B4EC9008A5B65 /* UnitTestingAppDelegate.swift */,
+				B06DF6692B48BA3100B88E7D /* TestsValues.swift */,
+			);
+			path = "Concentration-StoryboardTests";
+			sourceTree = "<group>";
+		};
+		B00E11442A2F1E7E000EE804 /* Concentration-StoryboardUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B00E11452A2F1E7E000EE804 /* Concentration_StoryboardUITests.swift */,
+				B00E11472A2F1E7E000EE804 /* Concentration_StoryboardUITestsLaunchTests.swift */,
+			);
+			path = "Concentration-StoryboardUITests";
+			sourceTree = "<group>";
+		};
+		B03BE9CB2B716FC00069842F /* Vfx */ = {
+			isa = PBXGroup;
+			children = (
+				B0C66E9F2B6790BE00322BD0 /* VfxLauncher.swift */,
+				B0E22C0D2B50552000B53F1B /* VfxEndOfGameViewController.swift */,
+				B0C66EA32B69D6D200322BD0 /* VfxViewController.swift */,
+				B03BE9CC2B716FD30069842F /* VfxMovingViewController.swift */,
+				B03BE9D02B7174080069842F /* VfxBouncingViewController.swift */,
+				B03BE9CE2B7170C00069842F /* VfxParticlesExplosionViewController.swift */,
+			);
+			path = Vfx;
+			sourceTree = "<group>";
+		};
+		B047203B2B3F6BC1004B9BE5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B0A6E5FC2B92400700BFA2B3 /* Mocks */,
+				B0E22C212B54C67E00B53F1B /* DeckModelTests.swift */,
+				B03BE9EA2B768B6E0069842F /* LevelsLibraryModelTests.swift */,
+				B06DF6672B48B92A00B88E7D /* MatchingCardsModelTests.swift */,
+				B0E22C1D2B54BC7900B53F1B /* ImagesLibraryModelTests.swift */,
+				B03BE9D82B73ACC50069842F /* ImagesLibraryPickerModelTests.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B047203C2B3F6BD0004B9BE5 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				B0A6E5FA2B923FF200BFA2B3 /* Mocks */,
+				B0E22C252B55255C00B53F1B /* GametableViewModelTests.swift */,
+				B0E22C272B55848100B53F1B /* CardViewModelTests.swift */,
+				B0E22C292B560ABC00B53F1B /* DealerViewModelTests.swift */,
+				B053A7992B598992006AC379 /* SinglePlayingViewModelTests.swift */,
+				B0E085022B8CEF6D0045B0C6 /* StageViewModelTests.swift */,
+				B03BE9E02B751DEB0069842F /* LevelViewModelTests.swift */,
+				B0C2E0D82BB72882009FDAE3 /* ParticlesLibraryViewModelTests.swift */,
+				B03A42ED2BBDABFF005B6BDB /* BackgroundsLibraryModelTests.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		B047203D2B3F6C2F004B9BE5 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B0A6E5FB2B923FFF00BFA2B3 /* Mocks */,
+				B04720402B3F6D0A004B9BE5 /* AddingCardsViewControllerTests.swift */,
+				B0DABB262B444DBF0013E5D2 /* LevelViewControllerTests.swift */,
+				B0F381352BD17002009B294F /* ScoreRankViewControllerTests.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B047203F2B3F6CBE004B9BE5 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		B05CEFEF2BEEAABD00ABA6F7 /* Demos */ = {
+			isa = PBXGroup;
+			children = (
+				B05CEFF02BEEAB2B00ABA6F7 /* AppDelegateExtension.swift */,
+				B05CEFF22BEEAB8000ABA6F7 /* LevelViewControllerExtension.swift */,
+				B05CEFF42BEF793400ABA6F7 /* GameModeChooserViewControllerExtension.swift */,
+			);
+			path = Demos;
+			sourceTree = "<group>";
+		};
+		B06EA46C2BD906C10064936B /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				B0A6E5F82B91F8D200BFA2B3 /* ImagesLibraryDatabase.swift */,
+				B0A6E5F62B91719200BFA2B3 /* LevelsLibraryDatabase.swift */,
+				B06EA46F2BD90BC30064936B /* GameDatabase.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		B06EA46D2BD909120064936B /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				B06EA46E2BD9092B0064936B /* Mocks */,
+				B0F381372BD2B47B009B294F /* ImagesLibraryDatabaseTests.swift */,
+				B0F3813F2BD87C61009B294F /* LevelsLibraryDatabaseTests.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		B06EA46E2BD9092B0064936B /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				B0F381392BD686D0009B294F /* MockUserDefaults.swift */,
+				B0F3813B2BD6BFD9009B294F /* MockImagesLibraryDatabase.swift */,
+				B0F3813D2BD87B99009B294F /* MockLevelsLibraryDatabase.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		B0877C232BE8BDDF00320CA2 /* DebugExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				B0877C242BE8BE0400320CA2 /* ControllersDebugExtensions.swift */,
+			);
+			path = DebugExtensions;
+			sourceTree = "<group>";
+		};
+		B0877C262BE97CB500320CA2 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				B0C4E2302B0F94A4001AD379 /* CardsDealerViewController.swift */,
+				B0C4E2312B0F94A4001AD379 /* CardsDealerViewController.xib */,
+				B0E22C092B5048BE00B53F1B /* CardViewController.swift */,
+				B00E1A102AC1D73E002389FF /* PlayableCardViewController.swift */,
+				B09C21322B890E66005EC5FF /* PresentationCardViewController.swift */,
+				B044684E2B6D1D2D0091A151 /* ScoreRankViewController.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		B0A6E5FA2B923FF200BFA2B3 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				B053A79D2B598C65006AC379 /* MockPlayingEngineViewModelDelegate.swift */,
+				B053A79F2B598DC3006AC379 /* MockScoreEngineViewModel.swift */,
+				B053A7A12B599184006AC379 /* MockGametableViewModel.swift */,
+				B03BE9DE2B751B190069842F /* MockLevelViewModel.swift */,
+				B03BE9E22B7532FE0069842F /* MockDealerViewModel.swift */,
+				B03BE9E42B7533710069842F /* MockPlayingEngineViewModel.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		B0A6E5FB2B923FFF00BFA2B3 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				B0A6E5FD2B92402C00BFA2B3 /* MockLevelViewControllerDelegate.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		B0A6E5FC2B92400700BFA2B3 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				B053A79B2B598AF8006AC379 /* MockDeckModel.swift */,
+				B03BE9DA2B73AD3A0069842F /* MockImagesLibraryModel.swift */,
+				B03BE9E62B7571C50069842F /* MockImagesLibraryPickerModel.swift */,
+				B0A6E5F02B8F777000BFA2B3 /* MockLevelModel.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		B0A6F6A92A9F7DAA0027B33C /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				B0A6F6AA2A9F7DEB0027B33C /* CoreGraphicsExtensions.swift */,
+				B0BF2C902AB9C79C00D6DF4D /* ObservableProperty.swift */,
+				B0EB121A2ACAE42A00F2C055 /* OptionalExtensions.swift */,
+				B0EB121C2ACD6F2F00F2C055 /* FoundationExtensions.swift */,
+				B05FDD2A2B18F13900E57C8B /* UIKitExtensions.swift */,
+				B09A5E7B2B57F50D0027D25D /* TwoDimensionsFramework.swift */,
+				B0C66EA12B6794EC00322BD0 /* WeakWrapper.swift */,
+				B0E1C9022BA25CCF006204FB /* DeviceOrientation.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		B0BF2C8A2AB9936F00D6DF4D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B0B2FD292B61DC8D00B1804C /* GameScoreModel.swift */,
+				B0E22C1F2B54C40900B53F1B /* DeckModelProtocol.swift */,
+				B03BE9D22B7249530069842F /* SingleImageDeckModel.swift */,
+				B03BE9F42B77AD770069842F /* DoubleImageDeckModel.swift */,
+				B0E085002B8CDF9D0045B0C6 /* DeckModelBuilder.swift */,
+				B06DF6652B48B67F00B88E7D /* MatchingCardsModel.swift */,
+				B0E22C112B54A2A800B53F1B /* ImagesLibraryModel.swift */,
+				B03BE9D62B73A8810069842F /* ImagesLibraryPickerModel.swift */,
+				B03BE9D42B724ACD0069842F /* LevelModel.swift */,
+				B03BE9EC2B76904B0069842F /* StageModel.swift */,
+				B03BE9E82B76395D0069842F /* LevelsLibraryModel.swift */,
+				B0687C4B2BA062730067BC03 /* ImagesLibrarySharedPickerModel.swift */,
+				B03A42EB2BBD9947005B6BDB /* BackgroundsLibraryModel.swift */,
+				B04D095A2C125B1F002AB763 /* ReviewRequesterModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B0BF2C8B2AB997B300D6DF4D /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				B06DF66B2B48C26900B88E7D /* CardViewModel.swift */,
+				B0E22C132B54A77200B53F1B /* DealerViewModel.swift */,
+				B0E22C152B54A82300B53F1B /* PlayingEngineViewModel.swift */,
+				B0E22C172B54A93F00B53F1B /* SinglePlayingViewModel.swift */,
+				B0E22C192B54A9B600B53F1B /* MultiPlayingViewModel.swift */,
+				B0E22C1B2B54AACA00B53F1B /* ScoreEngineViewModel.swift */,
+				B0E22C232B54CF0A00B53F1B /* GametableViewModel.swift */,
+				B03BE9EE2B76B2280069842F /* GameProcessViewModel.swift */,
+				B0E868642B8CA2FC0003DADB /* StageViewModel.swift */,
+				B03BE9DC2B7514BA0069842F /* LevelViewModel.swift */,
+				B03BE9F02B76B46D0069842F /* LevelsLibraryViewModel.swift */,
+				B0A6E5F22B913E2D00BFA2B3 /* EndOfGameViewModel.swift */,
+				B09509B42BADA35F005F5F45 /* ScoreEffectViewModel.swift */,
+				B0C2E0D62BB72852009FDAE3 /* ParticlesLibraryViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		B0BF2C8C2AB997C200D6DF4D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B0877C232BE8BDDF00320CA2 /* DebugExtensions */,
+				B03BE9CB2B716FC00069842F /* Vfx */,
+				B0877C262BE97CB500320CA2 /* Components */,
+				B09783AB2BBCD3F300B374B1 /* LauncherViewController.swift */,
+				B00182212A4F0E060080CBD0 /* GameModeChooserViewController.swift */,
+				B0D6D4552BA1E4120083D8AC /* SafeboxViewController.swift */,
+				B09C212E2B88D51C005EC5FF /* StagesCollectionViewController.swift */,
+				B0A6E5E42B8E18AA00BFA2B3 /* LevelsCollectionViewController.swift */,
+				B0A6E5E82B8E221A00BFA2B3 /* LevelsCollectionViewController.storyboard */,
+				B00182242A51B4430080CBD0 /* LevelViewController.swift */,
+				B0BC2F8C2AE6C696005EAD24 /* HelperForSwipingViewController.swift */,
+				B0D674D22AEB1AE1006F5EC5 /* HelperForSwipingViewController.storyboard */,
+				B045559C2B6B0C5900F31F6B /* EndOfGameViewController.swift */,
+				B03A42F12BC49BDE005B6BDB /* HelpAndCreditsViewController.swift */,
+				B03A42F22BC49BDE005B6BDB /* HelpAndCreditsViewController.xib */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B0BF2C8D2AB997CF00D6DF4D /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				B00E112F2A2F1E7E000EE804 /* LaunchScreen.storyboard */,
+				B00E112A2A2F1E7D000EE804 /* Main.storyboard */,
+				B0687C512BA0BD470067BC03 /* Safebox.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		B0BF2C8E2AB997E300D6DF4D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B0B502F62A582F23003EADB5 /* CardView.swift */,
+				B0B5E0642A52D4A700E9D884 /* GametableView.swift */,
+				B0C598F12BA8419200EDCAC8 /* StagesCollectionContainerView.swift */,
+				B09C21302B88D662005EC5FF /* StagesCollectionViewCell.swift */,
+				B0A6E5EA2B8E328200BFA2B3 /* FictiveGametableRepresentationView.swift */,
+				B0A6E5EC2B8F59AF00BFA2B3 /* LevelsCollectionViewCell.swift */,
+				B03BE9C52B6DA1B70069842F /* ProgressionBarView.xib */,
+				B0A6E5FF2B924D2100BFA2B3 /* ProgressionBarView.swift */,
+				B0D025772B95EDC300196377 /* FictiveCardView.swift */,
+				B00029312B963CDC00754519 /* RoundedShadowedView.swift */,
+				B06864782BE143B6009A88BE /* ScoreRankView.swift */,
+				B044684F2B6D1D2D0091A151 /* ScoreRankView.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B00E11202A2F1E7D000EE804 /* FlipMe-OpenSource */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B00E114B2A2F1E7E000EE804 /* Build configuration list for PBXNativeTarget "FlipMe-OpenSource" */;
+			buildPhases = (
+				B00E111D2A2F1E7D000EE804 /* Sources */,
+				B00E111E2A2F1E7D000EE804 /* Frameworks */,
+				B00E111F2A2F1E7D000EE804 /* Resources */,
+				B0EB120F2AC56A4E00F2C055 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "FlipMe-OpenSource";
+			packageProductDependencies = (
+			);
+			productName = "Concentration-Storyboard";
+			productReference = B00E11212A2F1E7D000EE804 /* FlipMe-OpenSource.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B00E11362A2F1E7E000EE804 /* FlipMe-OpenSourceTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B00E114E2A2F1E7E000EE804 /* Build configuration list for PBXNativeTarget "FlipMe-OpenSourceTests" */;
+			buildPhases = (
+				B00E11332A2F1E7E000EE804 /* Sources */,
+				B00E11342A2F1E7E000EE804 /* Frameworks */,
+				B00E11352A2F1E7E000EE804 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B00E11392A2F1E7E000EE804 /* PBXTargetDependency */,
+			);
+			name = "FlipMe-OpenSourceTests";
+			productName = "Concentration-StoryboardTests";
+			productReference = B00E11372A2F1E7E000EE804 /* FlipMe-OpenSourceTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B00E11402A2F1E7E000EE804 /* FlipMe-OpenSourceUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B00E11512A2F1E7E000EE804 /* Build configuration list for PBXNativeTarget "FlipMe-OpenSourceUITests" */;
+			buildPhases = (
+				B00E113D2A2F1E7E000EE804 /* Sources */,
+				B00E113E2A2F1E7E000EE804 /* Frameworks */,
+				B00E113F2A2F1E7E000EE804 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B00E11432A2F1E7E000EE804 /* PBXTargetDependency */,
+			);
+			name = "FlipMe-OpenSourceUITests";
+			productName = "Concentration-StoryboardUITests";
+			productReference = B00E11412A2F1E7E000EE804 /* FlipMe-OpenSourceUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		B05CEF8D2BEEAA6100ABA6F7 /* FlipMe-OpenSourceDemos */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B05CEFEA2BEEAA6100ABA6F7 /* Build configuration list for PBXNativeTarget "FlipMe-OpenSourceDemos" */;
+			buildPhases = (
+				B05CEF8E2BEEAA6100ABA6F7 /* Sources */,
+				B05CEFD72BEEAA6100ABA6F7 /* Frameworks */,
+				B05CEFD82BEEAA6100ABA6F7 /* Resources */,
+				B05CEFE92BEEAA6100ABA6F7 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "FlipMe-OpenSourceDemos";
+			packageProductDependencies = (
+			);
+			productName = "Concentration-Storyboard";
+			productReference = B05CEFED2BEEAA6100ABA6F7 /* FlipMe-OpenSourceDemos.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B00E11192A2F1E7D000EE804 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					B00E11202A2F1E7D000EE804 = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+					B00E11362A2F1E7E000EE804 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = B00E11202A2F1E7D000EE804;
+					};
+					B00E11402A2F1E7E000EE804 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = B00E11202A2F1E7D000EE804;
+					};
+				};
+			};
+			buildConfigurationList = B00E111C2A2F1E7D000EE804 /* Build configuration list for PBXProject "FlipMe-OpenSource" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B00E11182A2F1E7D000EE804;
+			packageReferences = (
+			);
+			productRefGroup = B00E11222A2F1E7D000EE804 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B00E11202A2F1E7D000EE804 /* FlipMe-OpenSource */,
+				B00E11362A2F1E7E000EE804 /* FlipMe-OpenSourceTests */,
+				B00E11402A2F1E7E000EE804 /* FlipMe-OpenSourceUITests */,
+				B05CEF8D2BEEAA6100ABA6F7 /* FlipMe-OpenSourceDemos */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B00E111F2A2F1E7D000EE804 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0A6E5E92B8E221A00BFA2B3 /* LevelsCollectionViewController.storyboard in Resources */,
+				B0A6E5EF2B8F6A7D00BFA2B3 /* Icons.xcassets in Resources */,
+				B0687C522BA0BD470067BC03 /* Safebox.storyboard in Resources */,
+				B03A42F32BC49BDE005B6BDB /* HelpAndCreditsViewController.xib in Resources */,
+				B04468512B6D1D2D0091A151 /* ScoreRankView.xib in Resources */,
+				B03BE9C72B6DA1B70069842F /* ProgressionBarView.xib in Resources */,
+				B09509B12BAD9718005F5F45 /* Particles.xcassets in Resources */,
+				B00E11312A2F1E7E000EE804 /* LaunchScreen.storyboard in Resources */,
+				B03A42EA2BBD904A005B6BDB /* Backgrounds.xcassets in Resources */,
+				B0C4E2332B0F94A4001AD379 /* CardsDealerViewController.xib in Resources */,
+				B0D674D32AEB1AE2006F5EC5 /* HelperForSwipingViewController.storyboard in Resources */,
+				B0F381422BDE70F3009B294F /* CardCovers.xcassets in Resources */,
+				B00E112E2A2F1E7E000EE804 /* Assets.xcassets in Resources */,
+				B00E112C2A2F1E7D000EE804 /* Main.storyboard in Resources */,
+				B0C0D6D92B98E120005D4120 /* CardImages.xcassets in Resources */,
+				B06E9E342BB185BF00DDA195 /* Decorations.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B00E11352A2F1E7E000EE804 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B00E113F2A2F1E7E000EE804 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B05CEFD82BEEAA6100ABA6F7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B05CEFD92BEEAA6100ABA6F7 /* LevelsCollectionViewController.storyboard in Resources */,
+				B05CEFDA2BEEAA6100ABA6F7 /* Icons.xcassets in Resources */,
+				B05CEFDB2BEEAA6100ABA6F7 /* Safebox.storyboard in Resources */,
+				B05CEFDC2BEEAA6100ABA6F7 /* HelpAndCreditsViewController.xib in Resources */,
+				B05CEFDD2BEEAA6100ABA6F7 /* ScoreRankView.xib in Resources */,
+				B05CEFDE2BEEAA6100ABA6F7 /* ProgressionBarView.xib in Resources */,
+				B05CEFDF2BEEAA6100ABA6F7 /* Particles.xcassets in Resources */,
+				B05CEFE02BEEAA6100ABA6F7 /* LaunchScreen.storyboard in Resources */,
+				B05CEFE12BEEAA6100ABA6F7 /* Backgrounds.xcassets in Resources */,
+				B05CEFE22BEEAA6100ABA6F7 /* CardsDealerViewController.xib in Resources */,
+				B05CEFE32BEEAA6100ABA6F7 /* HelperForSwipingViewController.storyboard in Resources */,
+				B05CEFE42BEEAA6100ABA6F7 /* CardCovers.xcassets in Resources */,
+				B05CEFE52BEEAA6100ABA6F7 /* Assets.xcassets in Resources */,
+				B05CEFE62BEEAA6100ABA6F7 /* Main.storyboard in Resources */,
+				B05CEFE72BEEAA6100ABA6F7 /* CardImages.xcassets in Resources */,
+				B05CEFE82BEEAA6100ABA6F7 /* Decorations.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B00E111D2A2F1E7D000EE804 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B06DF66C2B48C26900B88E7D /* CardViewModel.swift in Sources */,
+				B06864792BE143B6009A88BE /* ScoreRankView.swift in Sources */,
+				B0EB121D2ACD6F2F00F2C055 /* FoundationExtensions.swift in Sources */,
+				B0E22C1A2B54A9B600B53F1B /* MultiPlayingViewModel.swift in Sources */,
+				B0B5E0652A52D4A700E9D884 /* GametableView.swift in Sources */,
+				B05FDD2B2B18F13900E57C8B /* UIKitExtensions.swift in Sources */,
+				B03BE9D32B7249530069842F /* SingleImageDeckModel.swift in Sources */,
+				B0C557E92B0B5DE5003E33D1 /* main.swift in Sources */,
+				B0E22C122B54A2A800B53F1B /* ImagesLibraryModel.swift in Sources */,
+				B0EB121B2ACAE42A00F2C055 /* OptionalExtensions.swift in Sources */,
+				B0E868652B8CA2FC0003DADB /* StageViewModel.swift in Sources */,
+				B00182222A4F0E060080CBD0 /* GameModeChooserViewController.swift in Sources */,
+				B0B2FD2A2B61DC8D00B1804C /* GameScoreModel.swift in Sources */,
+				B0A6E5F32B913E2D00BFA2B3 /* EndOfGameViewModel.swift in Sources */,
+				B06EA4702BD90BC30064936B /* GameDatabase.swift in Sources */,
+				B0C66EA02B6790BF00322BD0 /* VfxLauncher.swift in Sources */,
+				B03A42F42BC49BDE005B6BDB /* HelpAndCreditsViewController.swift in Sources */,
+				B0E1C9032BA25CCF006204FB /* DeviceOrientation.swift in Sources */,
+				B00E11252A2F1E7D000EE804 /* AppDelegate.swift in Sources */,
+				B04D095B2C125B1F002AB763 /* ReviewRequesterModel.swift in Sources */,
+				B0BC2F8D2AE6C696005EAD24 /* HelperForSwipingViewController.swift in Sources */,
+				B03BE9D12B7174080069842F /* VfxBouncingViewController.swift in Sources */,
+				B0C66EA22B6794EC00322BD0 /* WeakWrapper.swift in Sources */,
+				B09C212F2B88D51C005EC5FF /* StagesCollectionViewController.swift in Sources */,
+				B04468502B6D1D2D0091A151 /* ScoreRankViewController.swift in Sources */,
+				B0E085012B8CDF9D0045B0C6 /* DeckModelBuilder.swift in Sources */,
+				B03BE9EF2B76B2280069842F /* GameProcessViewModel.swift in Sources */,
+				B0A6E6002B924D2100BFA2B3 /* ProgressionBarView.swift in Sources */,
+				B0E22C142B54A77200B53F1B /* DealerViewModel.swift in Sources */,
+				B03A42EC2BBD9947005B6BDB /* BackgroundsLibraryModel.swift in Sources */,
+				B0D025782B95EDC300196377 /* FictiveCardView.swift in Sources */,
+				B06DF6662B48B67F00B88E7D /* MatchingCardsModel.swift in Sources */,
+				B0A6F6AB2A9F7DEB0027B33C /* CoreGraphicsExtensions.swift in Sources */,
+				B00029322B963CDC00754519 /* RoundedShadowedView.swift in Sources */,
+				B0E22C242B54CF0A00B53F1B /* GametableViewModel.swift in Sources */,
+				B0A6E5ED2B8F59AF00BFA2B3 /* LevelsCollectionViewCell.swift in Sources */,
+				B0BF2C912AB9C79C00D6DF4D /* ObservableProperty.swift in Sources */,
+				B0E22C202B54C40900B53F1B /* DeckModelProtocol.swift in Sources */,
+				B03BE9F52B77AD770069842F /* DoubleImageDeckModel.swift in Sources */,
+				B03BE9CF2B7170C00069842F /* VfxParticlesExplosionViewController.swift in Sources */,
+				B0C66EA42B69D6D200322BD0 /* VfxViewController.swift in Sources */,
+				B03BE9D72B73A8810069842F /* ImagesLibraryPickerModel.swift in Sources */,
+				B0A6E5E62B8E18AA00BFA2B3 /* LevelsCollectionViewController.swift in Sources */,
+				B09A5E7C2B57F50D0027D25D /* TwoDimensionsFramework.swift in Sources */,
+				B09509B52BADA35F005F5F45 /* ScoreEffectViewModel.swift in Sources */,
+				B03BE9CD2B716FD30069842F /* VfxMovingViewController.swift in Sources */,
+				B00182252A51B4430080CBD0 /* LevelViewController.swift in Sources */,
+				B0E22C0A2B5048BE00B53F1B /* CardViewController.swift in Sources */,
+				B0C4E2322B0F94A4001AD379 /* CardsDealerViewController.swift in Sources */,
+				B09783AC2BBCD3F300B374B1 /* LauncherViewController.swift in Sources */,
+				B03BE9D52B724ACD0069842F /* LevelModel.swift in Sources */,
+				B0877C252BE8BE0400320CA2 /* ControllersDebugExtensions.swift in Sources */,
+				B0C2E0D72BB72852009FDAE3 /* ParticlesLibraryViewModel.swift in Sources */,
+				B00E1A112AC1D73F002389FF /* PlayableCardViewController.swift in Sources */,
+				B00E11272A2F1E7D000EE804 /* SceneDelegate.swift in Sources */,
+				B0A6E5F92B91F8D200BFA2B3 /* ImagesLibraryDatabase.swift in Sources */,
+				B0E22C1C2B54AACA00B53F1B /* ScoreEngineViewModel.swift in Sources */,
+				B03BE9ED2B76904B0069842F /* StageModel.swift in Sources */,
+				B0D6D4562BA1E4120083D8AC /* SafeboxViewController.swift in Sources */,
+				B0E22C182B54A93F00B53F1B /* SinglePlayingViewModel.swift in Sources */,
+				B0E22C162B54A82300B53F1B /* PlayingEngineViewModel.swift in Sources */,
+				B0E22C0E2B50552000B53F1B /* VfxEndOfGameViewController.swift in Sources */,
+				B03BE9DD2B7514BA0069842F /* LevelViewModel.swift in Sources */,
+				B0A6E5F72B91719200BFA2B3 /* LevelsLibraryDatabase.swift in Sources */,
+				B03BE9F12B76B46D0069842F /* LevelsLibraryViewModel.swift in Sources */,
+				B0EB12182AC57B1900F2C055 /* CardView.swift in Sources */,
+				B0A6E5EB2B8E328200BFA2B3 /* FictiveGametableRepresentationView.swift in Sources */,
+				B0C598F22BA8419200EDCAC8 /* StagesCollectionContainerView.swift in Sources */,
+				B09C21332B890E66005EC5FF /* PresentationCardViewController.swift in Sources */,
+				B0687C4C2BA062730067BC03 /* ImagesLibrarySharedPickerModel.swift in Sources */,
+				B09C21312B88D662005EC5FF /* StagesCollectionViewCell.swift in Sources */,
+				B03BE9E92B76395D0069842F /* LevelsLibraryModel.swift in Sources */,
+				B045559E2B6B0C5900F31F6B /* EndOfGameViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B00E11332A2F1E7E000EE804 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B053A79C2B598AF8006AC379 /* MockDeckModel.swift in Sources */,
+				B0F3813E2BD87B99009B294F /* MockLevelsLibraryDatabase.swift in Sources */,
+				B053A7A02B598DC3006AC379 /* MockScoreEngineViewModel.swift in Sources */,
+				B0C2E0D92BB72882009FDAE3 /* ParticlesLibraryViewModelTests.swift in Sources */,
+				B0A6E5F12B8F777000BFA2B3 /* MockLevelModel.swift in Sources */,
+				B053A7A22B599184006AC379 /* MockGametableViewModel.swift in Sources */,
+				B0F381402BD87C61009B294F /* LevelsLibraryDatabaseTests.swift in Sources */,
+				B0F381362BD17002009B294F /* ScoreRankViewControllerTests.swift in Sources */,
+				B03BE9E12B751DEB0069842F /* LevelViewModelTests.swift in Sources */,
+				B03BE9DB2B73AD3A0069842F /* MockImagesLibraryModel.swift in Sources */,
+				B06DF6682B48B92A00B88E7D /* MatchingCardsModelTests.swift in Sources */,
+				B0E22C262B55255C00B53F1B /* GametableViewModelTests.swift in Sources */,
+				B053A79A2B598992006AC379 /* SinglePlayingViewModelTests.swift in Sources */,
+				B06DF66A2B48BA3100B88E7D /* TestsValues.swift in Sources */,
+				B03BE9D92B73ACC50069842F /* ImagesLibraryPickerModelTests.swift in Sources */,
+				B0DD2FF52B0B4EC9008A5B65 /* UnitTestingAppDelegate.swift in Sources */,
+				B0E22C1E2B54BC7900B53F1B /* ImagesLibraryModelTests.swift in Sources */,
+				B0E22C2A2B560ABC00B53F1B /* DealerViewModelTests.swift in Sources */,
+				B0A6E5FE2B92402C00BFA2B3 /* MockLevelViewControllerDelegate.swift in Sources */,
+				B04720412B3F6D0A004B9BE5 /* AddingCardsViewControllerTests.swift in Sources */,
+				B0F3813A2BD686D0009B294F /* MockUserDefaults.swift in Sources */,
+				B0E085032B8CEF6D0045B0C6 /* StageViewModelTests.swift in Sources */,
+				B0DABB272B444DBF0013E5D2 /* LevelViewControllerTests.swift in Sources */,
+				B0E22C222B54C67E00B53F1B /* DeckModelTests.swift in Sources */,
+				B03BE9E32B7532FE0069842F /* MockDealerViewModel.swift in Sources */,
+				B053A79E2B598C65006AC379 /* MockPlayingEngineViewModelDelegate.swift in Sources */,
+				B03A42EE2BBDABFF005B6BDB /* BackgroundsLibraryModelTests.swift in Sources */,
+				B03BE9E52B7533710069842F /* MockPlayingEngineViewModel.swift in Sources */,
+				B03BE9E72B7571C50069842F /* MockImagesLibraryPickerModel.swift in Sources */,
+				B03BE9EB2B768B6E0069842F /* LevelsLibraryModelTests.swift in Sources */,
+				B0F3813C2BD6BFD9009B294F /* MockImagesLibraryDatabase.swift in Sources */,
+				B00E113C2A2F1E7E000EE804 /* Concentration_StoryboardTests.swift in Sources */,
+				B0F381382BD2B47B009B294F /* ImagesLibraryDatabaseTests.swift in Sources */,
+				B03BE9DF2B751B190069842F /* MockLevelViewModel.swift in Sources */,
+				B0E22C282B55848100B53F1B /* CardViewModelTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B00E113D2A2F1E7E000EE804 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B00E11462A2F1E7E000EE804 /* Concentration_StoryboardUITests.swift in Sources */,
+				B00E11482A2F1E7E000EE804 /* Concentration_StoryboardUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B05CEF8E2BEEAA6100ABA6F7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B05CEF8F2BEEAA6100ABA6F7 /* CardViewModel.swift in Sources */,
+				B05CEF902BEEAA6100ABA6F7 /* ScoreRankView.swift in Sources */,
+				B05CEF912BEEAA6100ABA6F7 /* FoundationExtensions.swift in Sources */,
+				B05CEF922BEEAA6100ABA6F7 /* MultiPlayingViewModel.swift in Sources */,
+				B05CEF932BEEAA6100ABA6F7 /* GametableView.swift in Sources */,
+				B05CEF942BEEAA6100ABA6F7 /* UIKitExtensions.swift in Sources */,
+				B05CEF952BEEAA6100ABA6F7 /* SingleImageDeckModel.swift in Sources */,
+				B05CEF962BEEAA6100ABA6F7 /* main.swift in Sources */,
+				B05CEF972BEEAA6100ABA6F7 /* ImagesLibraryModel.swift in Sources */,
+				B05CEF982BEEAA6100ABA6F7 /* OptionalExtensions.swift in Sources */,
+				B05CEF992BEEAA6100ABA6F7 /* StageViewModel.swift in Sources */,
+				B05CEF9A2BEEAA6100ABA6F7 /* GameModeChooserViewController.swift in Sources */,
+				B05CEF9B2BEEAA6100ABA6F7 /* GameScoreModel.swift in Sources */,
+				B05CEF9C2BEEAA6100ABA6F7 /* EndOfGameViewModel.swift in Sources */,
+				B05CEF9D2BEEAA6100ABA6F7 /* GameDatabase.swift in Sources */,
+				B05CEF9E2BEEAA6100ABA6F7 /* VfxLauncher.swift in Sources */,
+				B05CEF9F2BEEAA6100ABA6F7 /* HelpAndCreditsViewController.swift in Sources */,
+				B05CEFA02BEEAA6100ABA6F7 /* DeviceOrientation.swift in Sources */,
+				B05CEFA12BEEAA6100ABA6F7 /* AppDelegate.swift in Sources */,
+				B05CEFA22BEEAA6100ABA6F7 /* HelperForSwipingViewController.swift in Sources */,
+				B05CEFA32BEEAA6100ABA6F7 /* VfxBouncingViewController.swift in Sources */,
+				B05CEFA42BEEAA6100ABA6F7 /* WeakWrapper.swift in Sources */,
+				B05CEFA52BEEAA6100ABA6F7 /* StagesCollectionViewController.swift in Sources */,
+				B05CEFA62BEEAA6100ABA6F7 /* ScoreRankViewController.swift in Sources */,
+				B05CEFA72BEEAA6100ABA6F7 /* DeckModelBuilder.swift in Sources */,
+				B05CEFA82BEEAA6100ABA6F7 /* GameProcessViewModel.swift in Sources */,
+				B05CEFA92BEEAA6100ABA6F7 /* ProgressionBarView.swift in Sources */,
+				B05CEFF12BEEAB2B00ABA6F7 /* AppDelegateExtension.swift in Sources */,
+				B05CEFAA2BEEAA6100ABA6F7 /* DealerViewModel.swift in Sources */,
+				B05CEFAB2BEEAA6100ABA6F7 /* BackgroundsLibraryModel.swift in Sources */,
+				B05CEFAC2BEEAA6100ABA6F7 /* FictiveCardView.swift in Sources */,
+				B05CEFAD2BEEAA6100ABA6F7 /* MatchingCardsModel.swift in Sources */,
+				B05CEFAE2BEEAA6100ABA6F7 /* CoreGraphicsExtensions.swift in Sources */,
+				B05CEFAF2BEEAA6100ABA6F7 /* RoundedShadowedView.swift in Sources */,
+				B05CEFB02BEEAA6100ABA6F7 /* GametableViewModel.swift in Sources */,
+				B05CEFB12BEEAA6100ABA6F7 /* LevelsCollectionViewCell.swift in Sources */,
+				B05CEFB22BEEAA6100ABA6F7 /* ObservableProperty.swift in Sources */,
+				B05CEFB32BEEAA6100ABA6F7 /* DeckModelProtocol.swift in Sources */,
+				B05CEFB42BEEAA6100ABA6F7 /* DoubleImageDeckModel.swift in Sources */,
+				B05CEFB52BEEAA6100ABA6F7 /* VfxParticlesExplosionViewController.swift in Sources */,
+				B05CEFB62BEEAA6100ABA6F7 /* VfxViewController.swift in Sources */,
+				B05CEFB72BEEAA6100ABA6F7 /* ImagesLibraryPickerModel.swift in Sources */,
+				B05CEFB82BEEAA6100ABA6F7 /* LevelsCollectionViewController.swift in Sources */,
+				B05CEFB92BEEAA6100ABA6F7 /* TwoDimensionsFramework.swift in Sources */,
+				B05CEFBA2BEEAA6100ABA6F7 /* ScoreEffectViewModel.swift in Sources */,
+				B05CEFBB2BEEAA6100ABA6F7 /* VfxMovingViewController.swift in Sources */,
+				B05CEFBC2BEEAA6100ABA6F7 /* LevelViewController.swift in Sources */,
+				B05CEFF32BEEAB8000ABA6F7 /* LevelViewControllerExtension.swift in Sources */,
+				B05CEFBD2BEEAA6100ABA6F7 /* CardViewController.swift in Sources */,
+				B05CEFBE2BEEAA6100ABA6F7 /* CardsDealerViewController.swift in Sources */,
+				B05CEFBF2BEEAA6100ABA6F7 /* LauncherViewController.swift in Sources */,
+				B05CEFC02BEEAA6100ABA6F7 /* LevelModel.swift in Sources */,
+				B05CEFC12BEEAA6100ABA6F7 /* ControllersDebugExtensions.swift in Sources */,
+				B05CEFC22BEEAA6100ABA6F7 /* ParticlesLibraryViewModel.swift in Sources */,
+				B05CEFC32BEEAA6100ABA6F7 /* PlayableCardViewController.swift in Sources */,
+				B05CEFC42BEEAA6100ABA6F7 /* SceneDelegate.swift in Sources */,
+				B05CEFC52BEEAA6100ABA6F7 /* ImagesLibraryDatabase.swift in Sources */,
+				B05CEFC62BEEAA6100ABA6F7 /* ScoreEngineViewModel.swift in Sources */,
+				B05CEFC72BEEAA6100ABA6F7 /* StageModel.swift in Sources */,
+				B05CEFC82BEEAA6100ABA6F7 /* SafeboxViewController.swift in Sources */,
+				B05CEFC92BEEAA6100ABA6F7 /* SinglePlayingViewModel.swift in Sources */,
+				B05CEFCA2BEEAA6100ABA6F7 /* PlayingEngineViewModel.swift in Sources */,
+				B05CEFCB2BEEAA6100ABA6F7 /* VfxEndOfGameViewController.swift in Sources */,
+				B05CEFCC2BEEAA6100ABA6F7 /* LevelViewModel.swift in Sources */,
+				B05CEFCD2BEEAA6100ABA6F7 /* LevelsLibraryDatabase.swift in Sources */,
+				B05CEFCE2BEEAA6100ABA6F7 /* LevelsLibraryViewModel.swift in Sources */,
+				B05CEFCF2BEEAA6100ABA6F7 /* CardView.swift in Sources */,
+				B05CEFD02BEEAA6100ABA6F7 /* FictiveGametableRepresentationView.swift in Sources */,
+				B05CEFF52BEF793400ABA6F7 /* GameModeChooserViewControllerExtension.swift in Sources */,
+				B05CEFD12BEEAA6100ABA6F7 /* StagesCollectionContainerView.swift in Sources */,
+				B05CEFD22BEEAA6100ABA6F7 /* PresentationCardViewController.swift in Sources */,
+				B05CEFD32BEEAA6100ABA6F7 /* ImagesLibrarySharedPickerModel.swift in Sources */,
+				B05CEFD42BEEAA6100ABA6F7 /* StagesCollectionViewCell.swift in Sources */,
+				B05CEFD52BEEAA6100ABA6F7 /* LevelsLibraryModel.swift in Sources */,
+				B05CEFD62BEEAA6100ABA6F7 /* EndOfGameViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B00E11392A2F1E7E000EE804 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B00E11202A2F1E7D000EE804 /* FlipMe-OpenSource */;
+			targetProxy = B00E11382A2F1E7E000EE804 /* PBXContainerItemProxy */;
+		};
+		B00E11432A2F1E7E000EE804 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B00E11202A2F1E7D000EE804 /* FlipMe-OpenSource */;
+			targetProxy = B00E11422A2F1E7E000EE804 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B00E112A2A2F1E7D000EE804 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B00E112B2A2F1E7D000EE804 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B00E112F2A2F1E7E000EE804 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B00E11302A2F1E7E000EE804 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B00E11492A2F1E7E000EE804 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B00E114A2A2F1E7E000EE804 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B00E114C2A2F1E7E000EE804 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9N3YH5DLHZ;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Concentration-Storyboard/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Flip Me (Open)";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.kids-games";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.1.0;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "mousquetaire-softwares.flipme-opensourcepart";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B00E114D2A2F1E7E000EE804 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9N3YH5DLHZ;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Concentration-Storyboard/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Flip Me (Open)";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.kids-games";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "mousquetaire-softwares.flipme-opensourcepart";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B00E114F2A2F1E7E000EE804 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9N3YH5DLHZ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "stvim.Concentration-StoryboardTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FlipMe-OpenSource.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FlipMe-OpenSource";
+			};
+			name = Debug;
+		};
+		B00E11502A2F1E7E000EE804 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9N3YH5DLHZ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "stvim.Concentration-StoryboardTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FlipMe-OpenSource.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FlipMe-OpenSource";
+			};
+			name = Release;
+		};
+		B00E11522A2F1E7E000EE804 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9N3YH5DLHZ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "stvim.Concentration-StoryboardUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Concentration-Storyboard";
+			};
+			name = Debug;
+		};
+		B00E11532A2F1E7E000EE804 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9N3YH5DLHZ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "stvim.Concentration-StoryboardUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Concentration-Storyboard";
+			};
+			name = Release;
+		};
+		B05CEFEB2BEEAA6100ABA6F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 10;
+				DEVELOPMENT_TEAM = 9N3YH5DLHZ;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Concentration-StoryboardDemos-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Flip Me";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.kids-games";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "mousquetaire-softwares.memory-me";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B05CEFEC2BEEAA6100ABA6F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 10;
+				DEVELOPMENT_TEAM = 9N3YH5DLHZ;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Concentration-StoryboardDemos-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Flip Me";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.kids-games";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "mousquetaire-softwares.memory-me";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B00E111C2A2F1E7D000EE804 /* Build configuration list for PBXProject "FlipMe-OpenSource" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B00E11492A2F1E7E000EE804 /* Debug */,
+				B00E114A2A2F1E7E000EE804 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B00E114B2A2F1E7E000EE804 /* Build configuration list for PBXNativeTarget "FlipMe-OpenSource" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B00E114C2A2F1E7E000EE804 /* Debug */,
+				B00E114D2A2F1E7E000EE804 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B00E114E2A2F1E7E000EE804 /* Build configuration list for PBXNativeTarget "FlipMe-OpenSourceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B00E114F2A2F1E7E000EE804 /* Debug */,
+				B00E11502A2F1E7E000EE804 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B00E11512A2F1E7E000EE804 /* Build configuration list for PBXNativeTarget "FlipMe-OpenSourceUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B00E11522A2F1E7E000EE804 /* Debug */,
+				B00E11532A2F1E7E000EE804 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B05CEFEA2BEEAA6100ABA6F7 /* Build configuration list for PBXNativeTarget "FlipMe-OpenSourceDemos" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B05CEFEB2BEEAA6100ABA6F7 /* Debug */,
+				B05CEFEC2BEEAA6100ABA6F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B00E11192A2F1E7D000EE804 /* Project object */;
+}

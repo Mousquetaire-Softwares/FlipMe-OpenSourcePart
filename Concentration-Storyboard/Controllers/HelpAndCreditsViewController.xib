@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="ipad7_9" orientation="landscape" layout="fullscreen" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HelpAndCreditsViewController" customModule="Concentration_Storyboard" customModuleProvider="target">
+            <connections>
+                <outlet property="particlesPlaceholder1" destination="ssW-eg-xkQ" id="sfx-ER-6Mq"/>
+                <outlet property="particlesPlaceholder2" destination="SYn-bE-xCW" id="Bks-Ia-7ZX"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="1133" height="744"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view opaque="NO" contentMode="scaleToFill" id="3qb-Hr-4dy" userLabel="Content">
+                    <rect key="frame" x="0.0" y="0.0" width="1133" height="744"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ssW-eg-xkQ" userLabel="ParticlesPlaceholder1">
+                            <rect key="frame" x="497.5" y="90" width="138" height="138"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SYn-bE-xCW" userLabel="ParticlesPlaceholder2">
+                            <rect key="frame" x="358" y="230" width="137.5" height="137.5"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="iSO-L5-wOj">
+                            <rect key="frame" x="16" y="90" width="1101" height="638"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="general-helper-1" translatesAutoresizingMaskIntoConstraints="NO" id="zxO-Jl-Jcs">
+                                    <rect key="frame" x="342" y="0.0" width="417.5" height="417.5"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="zxO-Jl-Jcs" secondAttribute="height" priority="999" id="G4k-qC-AOT"/>
+                                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="876" id="jYT-bU-ZGy"/>
+                                    </constraints>
+                                </imageView>
+                                <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YzB-e5-4BO" userLabel="Descriptions">
+                                    <rect key="frame" x="91.5" y="417.5" width="918" height="220.5"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PZG-zS-M07">
+                                            <rect key="frame" x="20" y="20" width="878" height="180.5"/>
+                                            <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                            <string key="text">A fresh spin on the classic concentration game with cute kids' drawings and exciting levels !
+
+Design &amp; development : Steven MORIN
+Artwork : Sandrine ROBERT
+
+Mousquetaire Softwares
+ © 2024 All Right Reserved</string>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                            <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="PZG-zS-M07" secondAttribute="bottom" constant="20" symbolic="YES" id="0PI-p9-jmx"/>
+                                        <constraint firstItem="PZG-zS-M07" firstAttribute="leading" secondItem="YzB-e5-4BO" secondAttribute="leading" constant="20" symbolic="YES" id="KSd-DU-r42"/>
+                                        <constraint firstItem="PZG-zS-M07" firstAttribute="top" secondItem="YzB-e5-4BO" secondAttribute="top" constant="20" symbolic="YES" id="W9E-g6-EIA"/>
+                                        <constraint firstAttribute="trailing" secondItem="PZG-zS-M07" secondAttribute="trailing" constant="20" symbolic="YES" id="kej-G0-SJ7"/>
+                                    </constraints>
+                                </view>
+                                <view opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="UxL-fO-3jJ">
+                                    <rect key="frame" x="525.5" y="638" width="50" height="0.0"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="zxO-Jl-Jcs" firstAttribute="height" relation="lessThanOrEqual" secondItem="YzB-e5-4BO" secondAttribute="height" multiplier="3" id="aqW-PZ-Bqr"/>
+                            </constraints>
+                            <variation key="heightClass=compact" axis="horizontal">
+                                <mask key="constraints">
+                                    <exclude reference="aqW-PZ-Bqr"/>
+                                </mask>
+                            </variation>
+                        </stackView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IKa-Hu-Yy7" userLabel="CloseButton">
+                            <rect key="frame" x="1067" y="40" width="50" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="50" id="eIL-EF-MPn"/>
+                                <constraint firstAttribute="height" constant="50" id="mPp-dz-t5y"/>
+                            </constraints>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="close-2"/>
+                            <connections>
+                                <action selector="closeButtonTapAction:" destination="-1" eventType="touchUpInside" id="H5Q-Bh-dSd"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="izW-Gp-WBQ"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="ssW-eg-xkQ" firstAttribute="top" secondItem="zxO-Jl-Jcs" secondAttribute="top" id="1X3-CE-LmL"/>
+                        <constraint firstItem="ssW-eg-xkQ" firstAttribute="width" secondItem="zxO-Jl-Jcs" secondAttribute="width" multiplier="0.33" id="6vF-1v-xWR"/>
+                        <constraint firstItem="ssW-eg-xkQ" firstAttribute="height" secondItem="zxO-Jl-Jcs" secondAttribute="height" multiplier="0.33" id="DKs-Ik-GNA"/>
+                        <constraint firstItem="SYn-bE-xCW" firstAttribute="height" secondItem="zxO-Jl-Jcs" secondAttribute="height" multiplier="0.33" id="F1w-p7-r76"/>
+                        <constraint firstItem="SYn-bE-xCW" firstAttribute="centerY" secondItem="zxO-Jl-Jcs" secondAttribute="centerY" id="H2e-mD-Hdb"/>
+                        <constraint firstItem="izW-Gp-WBQ" firstAttribute="trailing" secondItem="iSO-L5-wOj" secondAttribute="trailing" constant="16" id="Hv3-hj-kCu"/>
+                        <constraint firstItem="iSO-L5-wOj" firstAttribute="top" secondItem="IKa-Hu-Yy7" secondAttribute="bottom" id="OW1-bR-5ji"/>
+                        <constraint firstItem="SYn-bE-xCW" firstAttribute="width" secondItem="zxO-Jl-Jcs" secondAttribute="width" multiplier="0.33" id="Sbc-jX-JRU"/>
+                        <constraint firstItem="IKa-Hu-Yy7" firstAttribute="top" secondItem="izW-Gp-WBQ" secondAttribute="top" constant="16" id="V3c-rn-RHA"/>
+                        <constraint firstItem="ssW-eg-xkQ" firstAttribute="centerX" secondItem="zxO-Jl-Jcs" secondAttribute="centerX" id="etM-vA-VxV"/>
+                        <constraint firstItem="SYn-bE-xCW" firstAttribute="left" secondItem="zxO-Jl-Jcs" secondAttribute="left" id="iP7-j9-MbF"/>
+                        <constraint firstItem="iSO-L5-wOj" firstAttribute="leading" secondItem="izW-Gp-WBQ" secondAttribute="leading" constant="16" id="j4g-RT-hX7"/>
+                        <constraint firstItem="izW-Gp-WBQ" firstAttribute="right" secondItem="IKa-Hu-Yy7" secondAttribute="right" constant="16" id="pMn-bQ-NlM"/>
+                        <constraint firstAttribute="bottom" secondItem="iSO-L5-wOj" secondAttribute="bottom" constant="16" id="ssH-XE-s3w"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <point key="canvasLocation" x="-189.375" y="-33.802816901408448"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="close-2" width="250.66667175292969" height="250"/>
+        <image name="general-helper-1" width="584" height="584"/>
+    </resources>
+</document>

@@ -1,0 +1,408 @@
+    //
+    //  GameDynamicViewController.swift
+    //  Concentration-Storyboard
+    //
+    //  Created by Steven Morin on 02/07/2023.
+    //
+
+import UIKit
+
+enum GametableViewControllerError : Error {
+    case ExpandGametable
+}
+extension DeckModel : CardsManager {
+    typealias Card = DeckCardModel
+}
+
+class GametableViewController: UIViewController {
+<<<<<<< HEAD
+    @IBOutlet weak var viewAddingCardsControllerEmbedded: UIView!
+=======
+>>>>>>> refact-ViewModelWithGenerics
+    private(set) lazy var gametableViewModel = GametableViewModel<DeckCardModel>(deckCardModelsManager: DeckModel()
+                                                                                 ,getExpandingDirection: {
+        [unowned self] in
+        self.gametableView.layoutIfNeeded()
+        return self.gametableView.gametableExpandingDirection
+    })
+    
+    var backgroundImageView: UIImageView = {
+        let imageView = UIImageView(frame: .zero)
+        imageView.image = UIImage(named: "Fond2")
+        imageView.contentMode = .scaleAspectFill
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    
+    var gameMode:GameMode?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        (UIApplication.shared.delegate as! AppDelegate).restrictRotation = .portrait
+        
+        view.insertSubview(backgroundImageView, at: 0)
+        NSLayoutConstraint.activate([
+            backgroundImageView.topAnchor.constraint(equalTo: view.topAnchor),
+            backgroundImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            backgroundImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            backgroundImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+        
+        animateExtendCardViewControllersMatrixFromViewModel(withDuration: 0)
+        
+        addCardsButton.isHidden = true
+        switch (gameMode) {
+        case  .level(1) : addCards(numberOfPairs: 4)
+        case  .level(2) : addCards(numberOfPairs: 20)
+        case  .level(3) : addCards(numberOfPairs: 36)
+        case  .dynamic : addCards(numberOfPairs: 6)
+            addCardsButton.isHidden = false
+        default:
+            fatalError()
+        }
+        
+        masterStackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(viewGestureTap(sender:))))
+        view.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(viewGesturePan(sender:))))
+        
+        self.configureAddingCardsControllerEmbedded()
+    }
+
+    /// MARK: Managing Helper for Swiping
+    private var helperForSwipingViewController:HelperForSwipingViewController?
+    private var wrongTapCounter:Int = 0
+    @objc func viewGestureTap(sender: UITapGestureRecognizer) {
+        if sender.state == .ended {
+            if wrongTapCounter < 2 {
+                wrongTapCounter += 1
+            } else {
+                wrongTapCounter = 0
+                showHelperForSwiping()
+            }
+        }
+    }
+    @objc public func viewGesturePan(sender: UIPanGestureRecognizer) {
+        if sender.state == .began {
+            hideHelperForSwiping()
+        }
+    }
+    
+
+    
+    @IBOutlet var gametableView: GametableView!
+    
+    @IBOutlet weak var masterStackView: UIStackView!
+    @IBOutlet var verticalStackViews: [UIStackView]!
+    
+    @IBOutlet weak var addCardsButton: UIButton!
+    
+    
+//    var visibleCardViewControllers: [(offset:Int,element:CardViewController)] { return cardViewControllers.enumerated().filter{ $0.element.isVisible == true } }
+//    var notVisibleCardViewControllers: [(offset:Int,element:CardViewController)] { cardViewControllers.enumerated().filter{ $0.element.isVisible == false } }
+    
+    private(set) lazy var cardSize: CGFloat = cardViewControllers.first?.view.bounds.width ?? verticalStackViews.first!.bounds.width
+    
+
+    // MARK: - Changing the gametable contents
+    
+    /// Adding a pair of cards (from user request)
+    @IBAction func addCards(_ sender: Any) {
+        addCards(numberOfPairs: 1)
+    }
+    
+    /// Adding pairs of cards in the gametable VC
+    public func addCards(numberOfPairs pairsOfCardsRequested:Int = 2) {
+        pairsOfCardsToAddInViewModel += pairsOfCardsRequested
+        self.updateGametableStructureIfNeeded()
+    }
+    
+    private var updateGametableStructureInProcess = false
+    private var pairsOfCardsToAddInViewModel = 0
+    /// All new card views necessary, to match viewModel -- recursive function (for transitions when news cards appears on screen, one after another)
+    private func updateGametableStructureIfNeeded() {
+        if updateGametableStructureInProcess == false {
+            updateGametableStructureInProcess = true
+ 
+            let numberOfCardViewModelsToSee = gametableViewModel.cardPlaceViewModels.filter{$0.isLinkedWithADeckCard == true}.count
+            let numberOfCardViewControllersVisible = self.cardViewControllers.filter{ $0.isVisible == true }.count
+            
+            let numberOfCardViewControllersToMakeAppear = numberOfCardViewModelsToSee - numberOfCardViewControllersVisible
+            let nextCardViewControllerToMakeAppear = self.cardViewControllers.filter{ $0.isVisible == false && $0.cardPlaceViewModel?.isLinkedWithADeckCard == true }.first
+            
+            if numberOfCardViewControllersToMakeAppear != 0 {
+                let animationDuration = 1/pow(Double(numberOfCardViewControllersToMakeAppear + pairsOfCardsToAddInViewModel + 5),0.75)
+                ///
+                if let nextCardViewControllerToMakeAppear = nextCardViewControllerToMakeAppear {
+                    self.animateCardViewControllerBecomingVisible(nextCardViewControllerToMakeAppear
+                                                ,withDuration: animationDuration
+                                                ,completion: { finished in
+                        self.updateGametableStructureInProcess = false
+                        self.updateGametableStructureIfNeeded()
+                    })
+                } else {
+                    self.animateExtendCardViewControllersMatrixFromViewModel(withDuration: animationDuration / 2
+                                                                             ,completion: { finished in
+                        self.updateGametableStructureInProcess = false
+                        self.updateGametableStructureIfNeeded()
+                    })
+                }
+            } else {
+                if pairsOfCardsToAddInViewModel != 0 {
+                    addPairsOfCardsInViewModelIfNeeded()
+                    updateGametableStructureInProcess = false
+                    self.updateGametableStructureIfNeeded()
+                }
+                else {
+                    updateGametableStructureInProcess = false
+                }
+            }
+        } else {
+        }
+    }
+        
+    
+    private func addPairsOfCardsInViewModelIfNeeded() {
+        let pairsOfCardsAdded = try? gametableViewModel.addCardPlacesLinkedWithDeckCards(numberOfPairs: pairsOfCardsToAddInViewModel)
+        if pairsOfCardsAdded == nil {
+            addCardsButton.isHidden = true
+            pairsOfCardsToAddInViewModel = 0
+        }
+        pairsOfCardsToAddInViewModel -= pairsOfCardsAdded ?? 0
+    }
+    
+    
+    private func animateCardViewControllerBecomingVisible(_ cardViewControllerToMakeAppear:CardViewController, withDuration duration: TimeInterval, completion: ((Bool) -> Void)? = nil) {
+        let viewToTransform = cardViewControllerToMakeAppear.cardView!
+        let targetAffineTransform = getViewTransform(of: viewToTransform, toLookLike: self.addCardsButton.frame)
+        
+        viewToTransform.transform = targetAffineTransform
+        viewToTransform.layer.zPosition = 1
+        cardViewControllerToMakeAppear.isVisible = true
+        
+        UIView.animate(withDuration: duration
+                       ,delay: 0
+                       ,options: [.curveEaseInOut]
+                       ,animations: {
+            viewToTransform.transform = .identity
+            viewToTransform.layer.zPosition = 0
+        }
+                       ,completion: completion
+        )
+        
+    }
+    private func getViewTransform(of viewToTransform:UIView, toLookLike target:CGRect) -> CGAffineTransform {
+        let realOrigin = viewToTransform.frame.origin
+        let realSize = viewToTransform.frame.size
+        let targetSize = target.size
+        let targetOrigin = view.convert(target.origin, to: viewToTransform.superview)
+        
+        let targetOriginTranslation = targetOrigin - realOrigin
+        let targetSizeToRealSize = targetSize / realSize
+        let targetSizeToRealSizeTranslation = (targetSize - realSize) / 2
+        
+        let targetAffineTransform = {
+            CGAffineTransform.identity
+                .translatedBy(x: targetOriginTranslation.x, y: targetOriginTranslation.y)
+                .translatedBy(x: targetSizeToRealSizeTranslation.width, y: targetSizeToRealSizeTranslation.height)
+                .scaledBy(x: targetSizeToRealSize.width, y: targetSizeToRealSize.height)
+        }()
+        
+        return targetAffineTransform
+    }
+    
+    
+    var gametableViewSize:(columns:Int, rows:Int) {
+        (verticalStackViews.count, verticalStackViews.first!.arrangedSubviews.count )
+    }
+    
+    
+//    private func animateUpdateCardviewsStructureFromViewModel(completion: @escaping (Bool) -> Void) {
+//        UIView.animate(withDuration: 1, ///pow(Double(numberOfCardViewsToMakeAppear),1),
+//                       delay: 0,
+//                       options: [.curveEaseInOut],
+//                       animations: {
+//            try! self.updateCardviewsStructureFromViewModel()
+//        },
+//                       completion:completion
+//                       )
+//    }
+    
+    private func animateExtendCardViewControllersMatrixFromViewModel(withDuration duration: TimeInterval, completion: ((Bool) -> Void)? = nil) {
+        assert(gametableViewModel.gametableSize.columns > gametableViewSize.columns || gametableViewModel.gametableSize.rows > gametableViewSize.rows)
+        
+        if gametableViewModel.gametableSize.columns > gametableViewSize.columns {
+            let columnNum = gametableViewSize.columns
+            
+            let newVerticalStackView = gametableView.configureNewVerticalStackView()
+            masterStackView.addArrangedSubview(newVerticalStackView)
+            self.verticalStackViews.append(newVerticalStackView)
+            
+            for rowNum in 0..<gametableViewSize.rows {
+                addNewCardViewController(bindWith: gametableViewModel.cardPlaceViewModelsMatrix[rowNum][columnNum]
+                                         ,addViewIn: newVerticalStackView)
+            }
+        } else if gametableViewModel.gametableSize.rows > gametableViewSize.rows {
+            let rowNum = gametableViewSize.rows
+            
+            for columnNum in 0..<gametableViewSize.columns {
+                addNewCardViewController(bindWith: gametableViewModel.cardPlaceViewModelsMatrix[rowNum][columnNum]
+                                         ,addViewIn: verticalStackViews[columnNum])
+            }
+        }
+        
+        UIView.animate(withDuration: duration
+                       ,delay: 0
+                       ,options: [.curveEaseInOut]
+                       ,animations: {
+            self.view.layoutIfNeeded()
+            self.cardSize = self.cardViewControllers.first!.view.bounds.width
+        }
+                       ,completion: completion
+        )
+        
+    }
+    
+    
+    
+    
+    private var cardViewControllers : [CardViewController] = []
+}
+
+// MARK: - CardViewControllers management
+extension GametableViewController {
+    private func instantiateNewCardViewController(bindWith cardPlaceViewModel:CardPlaceViewModel<DeckCardModel>) -> CardViewController {
+        let storyboardName = String(describing: CardViewController.self)
+        let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
+        let viewController = storyboard.instantiateInitialViewController() {
+            coder in
+            return CardViewController(cardPlaceViewModel: cardPlaceViewModel, delegate: self, coder: coder)
+        }!
+        
+        return viewController
+    }
+    
+    @discardableResult
+    private func addNewCardViewController(bindWith cardPlaceViewModel:CardPlaceViewModel<DeckCardModel>
+                                          ,addViewIn:UIStackView) -> CardViewController {
+        let newCardViewController = instantiateNewCardViewController(bindWith: cardPlaceViewModel)
+        cardViewControllers.append(newCardViewController)
+        self.addChild(newCardViewController)
+        addViewIn.addArrangedSubview(newCardViewController.view)
+        newCardViewController.didMove(toParent: self)
+        
+        return newCardViewController
+    }
+    
+
+    
+    
+}
+
+// MARK: - AddingCardsController embed
+extension GametableViewController {
+    private func configureAddingCardsControllerEmbedded() {
+        let newVC = AddingCardsViewController(gametableViewModel)
+        self.addChild(newVC)
+        self.viewAddingCardsControllerEmbedded.addSubview(newVC.view)
+        
+//        newVC.view.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            newVC.view.widthAnchor.constraint(equalTo: self.viewAddingCardsControllerEmbedded.widthAnchor, multiplier: 0.9)
+            ,newVC.view.heightAnchor.constraint(equalTo: self.viewAddingCardsControllerEmbedded.heightAnchor, multiplier: 0.9)
+            ,newVC.view.centerXAnchor.constraint(equalTo: self.viewAddingCardsControllerEmbedded.centerXAnchor)
+            ,newVC.view.centerYAnchor.constraint(equalTo: self.viewAddingCardsControllerEmbedded.centerYAnchor)])
+        newVC.didMove(toParent: self)
+        
+    }
+}
+
+// MARK: - Visual elements of gametable view
+extension GametableViewController {
+ 
+    public func updateLabels() {
+//        gametableView.label1.text = "ZoomedImageSize : \(Int((verticalStackViews.first!.subviews.first! as! CardView).zoomedCardSize*CardView.Sizes.ImageToViewSize))"
+//        gametableView.label1.text = "Z.I.S. : ?"
+        gametableView.label2.text = "ImageSize : \(Int(cardSize*CardView.Sizes.ImageToViewSize))"
+        gametableView.label3.text = "CardSize : \(Int(cardSize))"
+        
+    }
+    
+    // MARK: actions with storyboard
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        if segue.identifier == "showHelperForSwiping" {
+            if let cardViewController = (segue.destination as? CardViewController) {
+                // doesnt work because controller isnt initialized yet here
+                //                embededCardViews.append(cardViewController.cardView)
+                cardViewControllers.append(cardViewController)
+//                cardViewController
+            }
+        } else if segue.identifier == "embedAddingCardsSegue" {
+//            segue.destination = AddingCardsViewController()
+        }
+    }
+}
+
+// MARK: - Managing Helper for swiping
+extension GametableViewController : HelperForSwipingViewControllerDelegate {
+    func randomImageNameInGametable() -> String? {
+        self.gametableViewModel.cardPlaceViewModels
+            .filter{$0.isLinkedWithADeckCard == true}
+            .randomElement()?
+            .deckCardModel.value?.imageName
+    }
+    
+    
+}
+extension GametableViewController {
+    func hideHelperForSwiping() {
+        if let helperForSwipingViewController = helperForSwipingViewController {
+            helperForSwipingViewController.willMove(toParent: nil)
+            helperForSwipingViewController.view.removeFromSuperview()
+            helperForSwipingViewController.removeFromParent()
+            self.helperForSwipingViewController = nil
+        }
+    }
+    func showHelperForSwiping() {
+        if helperForSwipingViewController == nil {
+            let storyboardName = "HelperForSwipingViewController"
+            let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
+            
+            let viewController = storyboard.instantiateInitialViewController(creator: { coder in
+                HelperForSwipingViewController(self, coder: coder)
+            })
+            
+            if let viewController = viewController {
+                addChild(viewController)
+                
+                view.addSubview(viewController.view)
+                viewController.view.translatesAutoresizingMaskIntoConstraints = false
+                NSLayoutConstraint.activate([
+                    viewController.view.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.5)
+                    ,viewController.view.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.4)
+                    ,viewController.view.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -20)
+                    ,viewController.view.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 100)])
+                viewController.didMove(toParent: self)
+                helperForSwipingViewController = viewController
+                //            }
+            }
+        }
+    }
+}
+
+// MARK: CardViewDelegate implementation
+extension GametableViewController : CardViewDelegate {
+    func faceUp(cardPlaceViewModelIndex: CardIndex) throws {
+        wrongTapCounter = 0
+        try gametableViewModel.faceUp(cardPlaceViewModelIndex: cardPlaceViewModelIndex)
+    }
+    
+    func putTwoUnmatchedCardsFaceDown() throws {
+        try gametableViewModel.putTwoUnmatchedCardsFaceDown()
+    }
+}
+
+extension GametableViewController {
+    
+}

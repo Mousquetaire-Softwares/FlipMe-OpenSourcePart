@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProgressionBarView" customModule="Concentration_Storyboard" customModuleProvider="target">
+            <connections>
+                <outlet property="background" destination="u06-0f-yry" id="BGD-Ic-vWl"/>
+                <outlet property="progressBarCompleted" destination="SWn-xd-QEr" id="wx1-74-dXG"/>
+                <outlet property="progressBarCompletedWidthConstraint" destination="bJB-9W-OKP" id="Fk7-p0-UGs"/>
+                <outlet property="progressBarProgression" destination="Izp-vo-Kdc" id="7dL-dr-DCD"/>
+                <outlet property="progressBarProgressionWidthConstraint" destination="eFG-A7-4lf" id="eFm-FR-DVQ"/>
+                <outlet property="progressBarUncompletedFinal" destination="fj1-45-1ji" id="e3E-ZK-hX5"/>
+                <outlet property="progressBarUncompletedFinalWidthConstraint" destination="Ske-8F-YRC" id="RyW-C1-klk"/>
+                <outlet property="progressBarUncompletedStart" destination="RO8-Wa-y1s" id="NAH-2G-OD6"/>
+                <outlet property="progressBarUncompletedStartWidthConstraint" destination="8Cl-3N-2iX" id="hRJ-QR-w9h"/>
+                <outlet property="wholeBar" destination="bAs-iH-XSu" id="vwM-VJ-Ahi"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="470" height="14"/>
+            <subviews>
+                <view opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u06-0f-yry" userLabel="Background">
+                    <rect key="frame" x="0.0" y="0.0" width="470" height="14"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bAs-iH-XSu" userLabel="WholeBar View">
+                    <rect key="frame" x="20" y="4.3333333333333339" width="430" height="5.3333333333333339"/>
+                    <subviews>
+                        <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fj1-45-1ji" userLabel="ProgressBarUncompletedFinal">
+                            <rect key="frame" x="0.0" y="0.0" width="21.666666666666668" height="5.333333333333333"/>
+                            <color key="backgroundColor" red="0.79277146464646464" green="0.6425184027116011" blue="0.14599950510749804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                        </view>
+                        <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Izp-vo-Kdc" userLabel="ProgressBarProgression">
+                            <rect key="frame" x="0.0" y="0.0" width="21.666666666666668" height="5.333333333333333"/>
+                            <color key="backgroundColor" red="0.99126418618146439" green="1" blue="0.21924268677196779" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                        </view>
+                        <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RO8-Wa-y1s" userLabel="ProgressBarUncompletedStart">
+                            <rect key="frame" x="0.0" y="0.0" width="21.666666666666668" height="5.333333333333333"/>
+                            <color key="backgroundColor" red="0.79277146460000003" green="0.64251840270000005" blue="0.14599950510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                        </view>
+                        <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SWn-xd-QEr" userLabel="ProgressBarCompleted">
+                            <rect key="frame" x="0.0" y="0.0" width="21.666666666666668" height="5.333333333333333"/>
+                            <color key="backgroundColor" red="0.17284562886282373" green="0.66942866161616155" blue="0.3014230511672692" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="RO8-Wa-y1s" firstAttribute="height" secondItem="bAs-iH-XSu" secondAttribute="height" id="4Kb-St-zo4"/>
+                        <constraint firstItem="RO8-Wa-y1s" firstAttribute="width" secondItem="bAs-iH-XSu" secondAttribute="width" multiplier="0.05" id="8Cl-3N-2iX"/>
+                        <constraint firstItem="SWn-xd-QEr" firstAttribute="centerY" secondItem="bAs-iH-XSu" secondAttribute="centerY" id="AW2-cY-bxB"/>
+                        <constraint firstItem="fj1-45-1ji" firstAttribute="height" secondItem="bAs-iH-XSu" secondAttribute="height" id="G2O-Wd-d1t"/>
+                        <constraint firstItem="fj1-45-1ji" firstAttribute="centerY" secondItem="bAs-iH-XSu" secondAttribute="centerY" id="HID-bZ-q1F"/>
+                        <constraint firstItem="RO8-Wa-y1s" firstAttribute="left" secondItem="bAs-iH-XSu" secondAttribute="left" id="HVG-bC-Vaz"/>
+                        <constraint firstItem="Izp-vo-Kdc" firstAttribute="centerY" secondItem="bAs-iH-XSu" secondAttribute="centerY" id="KKd-c8-rtu"/>
+                        <constraint firstItem="Izp-vo-Kdc" firstAttribute="height" secondItem="bAs-iH-XSu" secondAttribute="height" id="Kvh-4T-Zsv"/>
+                        <constraint firstItem="fj1-45-1ji" firstAttribute="width" secondItem="bAs-iH-XSu" secondAttribute="width" multiplier="0.05" id="Ske-8F-YRC"/>
+                        <constraint firstItem="SWn-xd-QEr" firstAttribute="width" secondItem="bAs-iH-XSu" secondAttribute="width" multiplier="0.05" id="bJB-9W-OKP"/>
+                        <constraint firstItem="Izp-vo-Kdc" firstAttribute="width" secondItem="bAs-iH-XSu" secondAttribute="width" multiplier="0.05" id="eFG-A7-4lf"/>
+                        <constraint firstItem="SWn-xd-QEr" firstAttribute="height" secondItem="bAs-iH-XSu" secondAttribute="height" id="lj2-lu-RFv"/>
+                        <constraint firstItem="RO8-Wa-y1s" firstAttribute="centerY" secondItem="bAs-iH-XSu" secondAttribute="centerY" id="sBn-uJ-cKD"/>
+                        <constraint firstItem="fj1-45-1ji" firstAttribute="left" secondItem="bAs-iH-XSu" secondAttribute="left" id="u3p-Np-M7L"/>
+                        <constraint firstItem="Izp-vo-Kdc" firstAttribute="left" secondItem="bAs-iH-XSu" secondAttribute="left" id="w8k-Gs-nct"/>
+                        <constraint firstItem="SWn-xd-QEr" firstAttribute="leading" secondItem="bAs-iH-XSu" secondAttribute="leading" id="wF0-GU-53q"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <accessibility key="accessibilityConfiguration">
+                <accessibilityTraits key="traits" notEnabled="YES"/>
+            </accessibility>
+            <constraints>
+                <constraint firstItem="bAs-iH-XSu" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailingMargin" id="ECp-Gx-hE2"/>
+                <constraint firstItem="u06-0f-yry" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Ilm-WK-b7j"/>
+                <constraint firstItem="bAs-iH-XSu" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.4" id="Lm3-Tg-RPl"/>
+                <constraint firstItem="u06-0f-yry" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="fj1-rI-M25"/>
+                <constraint firstItem="u06-0f-yry" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" id="kiq-AB-bty"/>
+                <constraint firstItem="bAs-iH-XSu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="lb0-CE-RPm"/>
+                <constraint firstItem="u06-0f-yry" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" id="qk9-nM-DOt"/>
+                <constraint firstItem="bAs-iH-XSu" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerYWithinMargins" id="vCJ-Bc-Ksa"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <edgeInsets key="layoutMargins" top="4" left="4" bottom="4" right="4"/>
+            <point key="canvasLocation" x="149.61832061068702" y="-266.19718309859155"/>
+        </view>
+    </objects>
+</document>
