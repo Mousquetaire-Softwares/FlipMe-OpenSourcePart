@@ -7,7 +7,7 @@
 
 import Foundation
 
-@testable import Concentration_Storyboard
+@testable import FlipMe_OpenSource
 
 struct MockImagesLibraryPickerModelUnlimited: ImagesLibraryPickerModelProtocol {
     var library: ImagesLibraryModelProtocol = MockImagesLibraryModelEmpty()

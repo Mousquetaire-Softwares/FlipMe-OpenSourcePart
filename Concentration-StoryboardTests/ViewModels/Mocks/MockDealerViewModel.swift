@@ -6,7 +6,7 @@
 //
 
 import Foundation
-@testable import Concentration_Storyboard
+@testable import FlipMe_OpenSource
 
 class MockDealerViewModelEmpty : DealerViewModelProtocol {
     var gametable: GametableViewModelProtocol = MockGametableViewModelEmpty()

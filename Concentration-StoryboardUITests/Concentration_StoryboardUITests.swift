@@ -1,5 +1,5 @@
 //
-//  Concentration_StoryboardUITests.swift
+//  FlipMe_OpenSourceUITests.swift
 //  Concentration-StoryboardUITests
 //
 //  Created by Steven Morin on 06/06/2023.
@@ -7,7 +7,7 @@
 
 import XCTest
 
-final class Concentration_StoryboardUITests: XCTestCase {
+final class FlipMe_OpenSourceUITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

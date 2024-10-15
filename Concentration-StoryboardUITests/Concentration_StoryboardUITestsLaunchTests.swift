@@ -1,5 +1,5 @@
 //
-//  Concentration_StoryboardUITestsLaunchTests.swift
+//  FlipMe_OpenSourceUITestsLaunchTests.swift
 //  Concentration-StoryboardUITests
 //
 //  Created by Steven Morin on 06/06/2023.
@@ -7,7 +7,7 @@
 
 import XCTest
 
-final class Concentration_StoryboardUITestsLaunchTests: XCTestCase {
+final class FlipMe_OpenSourceUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

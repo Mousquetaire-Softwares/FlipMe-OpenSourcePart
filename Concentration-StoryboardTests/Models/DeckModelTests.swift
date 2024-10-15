@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import Concentration_Storyboard
+@testable import FlipMe_OpenSource
 
 final class DeckModelTests: XCTestCase {
     fileprivate var imagesPickerWith3Images : ImagesLibraryPickerModelProtocol!

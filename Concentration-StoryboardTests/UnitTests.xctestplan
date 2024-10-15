@@ -14,9 +14,9 @@
   "testTargets" : [
     {
       "target" : {
-        "containerPath" : "container:Concentration-Storyboard.xcodeproj",
+        "containerPath" : "container:FlipMe-OpenSource.xcodeproj",
         "identifier" : "B00E11362A2F1E7E000EE804",
-        "name" : "Concentration-StoryboardTests"
+        "name" : "FlipMe-OpenSourceTests"
       }
     }
   ],

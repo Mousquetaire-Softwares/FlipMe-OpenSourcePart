@@ -8,16 +8,16 @@
       <BuildActionEntries>
          <BuildActionEntry
             buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B00E11202A2F1E7D000EE804"
-               BuildableName = "Concentration-Storyboard.app"
-               BlueprintName = "Concentration-Storyboard"
-               ReferencedContainer = "container:FlipMe-OpenSourcePart.xcodeproj">
+               BlueprintIdentifier = "B00E11362A2F1E7E000EE804"
+               BuildableName = "FlipMe-OpenSourceTests.xctest"
+               BlueprintName = "FlipMe-OpenSourceTests"
+               ReferencedContainer = "container:FlipMe-OpenSource.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,41 +33,6 @@
             default = "YES">
          </TestPlanReference>
       </TestPlans>
-      <Testables>
-         <TestableReference
-            skipped = "NO"
-            parallelizable = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B00E11362A2F1E7E000EE804"
-               BuildableName = "Concentration-StoryboardTests.xctest"
-               BlueprintName = "Concentration-StoryboardTests"
-               ReferencedContainer = "container:FlipMe-OpenSourcePart.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "YES"
-            parallelizable = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B00E11402A2F1E7E000EE804"
-               BuildableName = "Concentration-StoryboardUITests.xctest"
-               BlueprintName = "Concentration-StoryboardUITests"
-               ReferencedContainer = "container:FlipMe-OpenSourcePart.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "YES"
-            parallelizable = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B0EB12002AC56A4D00F2C055"
-               BuildableName = "KDMemory-UIElementsTests.xctest"
-               BlueprintName = "KDMemory-UIElementsTests"
-               ReferencedContainer = "container:FlipMe-OpenSourcePart.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-      </Testables>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -89,15 +54,6 @@
             ReferencedContainer = "container:FlipMe-OpenSource.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B00E11202A2F1E7D000EE804"
-            BuildableName = "Concentration-Storyboard.app"
-            BlueprintName = "Concentration-Storyboard"
-            ReferencedContainer = "container:FlipMe-OpenSourcePart.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -105,25 +61,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B00E11202A2F1E7D000EE804"
-            BuildableName = "Concentration-Storyboard.app"
-            BlueprintName = "Concentration-Storyboard"
-            ReferencedContainer = "container:FlipMe-OpenSourcePart.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B00E11202A2F1E7D000EE804"
-            BuildableName = "Concentration-Storyboard.app"
-            BlueprintName = "Concentration-Storyboard"
-            ReferencedContainer = "container:FlipMe-OpenSourcePart.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

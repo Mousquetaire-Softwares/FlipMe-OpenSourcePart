@@ -6,12 +6,12 @@
 //
 
 import Foundation
-@testable import Concentration_Storyboard
+@testable import FlipMe_OpenSource
 
 class MockPlayingEngineViewModelDelegate : PlayingEngineViewModelDelegate {
-    private(set) var gametableHasANewMatchCalls = [Set<Concentration_Storyboard.CardViewModel.Key>]()
-    private(set) var gametableCardsUpdatedCalls = [Set<Concentration_Storyboard.CardViewModel.Key>]()
-    private(set) var gametableRoundIsOverCalls : [(Set<Concentration_Storyboard.CardViewModel.Key>,[ScoreEffectViewModel])] = []
+    private(set) var gametableHasANewMatchCalls = [Set<FlipMe_OpenSource.CardViewModel.Key>]()
+    private(set) var gametableCardsUpdatedCalls = [Set<FlipMe_OpenSource.CardViewModel.Key>]()
+    private(set) var gametableRoundIsOverCalls : [(Set<FlipMe_OpenSource.CardViewModel.Key>,[ScoreEffectViewModel])] = []
     private(set) var gametableIsEmptyCalls : Int = 0
     
     func gametableHasANewMatch(_ arg: Set<CardViewModel.Key>) {
@@ -22,7 +22,7 @@ class MockPlayingEngineViewModelDelegate : PlayingEngineViewModelDelegate {
         gametableCardsUpdatedCalls.append(arg)
     }
     
-    func gametableRoundIsOver(playedKeys arg1: Set<Concentration_Storyboard.CardViewModel.Key>,scoreEffects arg2: [ScoreEffectViewModel]) {
+    func gametableRoundIsOver(playedKeys arg1: Set<FlipMe_OpenSource.CardViewModel.Key>,scoreEffects arg2: [ScoreEffectViewModel]) {
         gametableRoundIsOverCalls.append((arg1,arg2))
     }
     

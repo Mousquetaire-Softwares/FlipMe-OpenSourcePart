@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import Concentration_Storyboard
+@testable import FlipMe_OpenSource
 
 // Mock classes for testing
 
@@ -17,7 +17,7 @@ class MockDealerViewModelDelegate : DealerViewModelDelegate {
     }
 }
 //struct GametableViewModelMock: GametableViewModelProtocol {
-//    var size: Concentration_Storyboard.Size2D
+//    var size: FlipMe_OpenSource.Size2D
 //    var cards: [CardViewModel.Key: CardViewModel] = [:]
 //    var state: GametableState = .Dealing
 //}

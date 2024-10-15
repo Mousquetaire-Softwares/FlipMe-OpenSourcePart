@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import Concentration_Storyboard
+@testable import FlipMe_OpenSource
 
 extension GameProcessViewModel {
     func sameCase(as other:GameProcessViewModel) -> Bool {
